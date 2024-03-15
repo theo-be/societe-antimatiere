@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+
+
+<body >
+<header role="banner">
+<div class="banner">
+  <!-- Logo du site -->
+  <img src="icon.png" alt="Logo du site" id="logo">
+  <h1 id="title">Société Antimatiere</h1>
+</div>
+  <nav>
+    <!-- Menu horizontal -->
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Générateurs d'Antimatière</a></li>
+      <li><a href="#">Améliorations Dimensionnelles</a></li>
+      <li><a href="#">Dispositifs de Manipulation Temporelle</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="connexion">
+    <!-- Espace de connexion -->
+    <a href="#">Se connecter</a>
+  </div>
+</header>
+
+<!-- partie principale + menu -->
+<div class="sidemenu">
+  <nav>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li>Nos produits</a></li>
+      <li><a href="#">Générateurs d'Antimatière</a></li>
+      <li><a href="#">Améliorations Dimensionnelles</a></li>
+      <li><a href="#">Dispositifs de Manipulation Temporelle</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="contact">
+<form method="post">
+  <h2>Demande de contact</h2>
+  <label>Date du contact</label><input type="date" name="date_contact" required><br><br>
+  <label>Nom</label> <input type="text" placeholder="Entrez Nom" name="nom" required><br><br>
+  <label>Prenom</label> <input type="text" placeholder="Entrez Prenom" name="prenom" required><br><br>
+  <label>Email</label> <input type="email" placeholder="monmail@monsite.org" name="email" required><br><br>
+  <label>Genre</label><input type="radio" id="Femme" name="genre" value="Femme"><label for="Femme">Femme</label>
+  <input type="radio" id="Homme" name="genre" value="Homme"><label for="homme">Homme</label><br><br>
+  <label>Date de Naissance</label><input type="date" name="date_naissance" required><br><br>
+  <label for="fonction">Fonction</label>
+  <select name="fonction" id="fonction">
+    <option value="Ens">Enseignant</option>
+    <option value="Eleve">Eleve</option>
+    <option value="Autre">Autre</option>
+  </select>
+  <br><br>
+  <label>Sujet:</label><input type="text" placeholder="Entrez le sujet de votre mail" name="sujet" required><br><br>
+  <label>Contenu:</label><input type="text" placeholder="Tapez ici votre mail" name="contenu" required><br><br>
+  <button type="submit">Envoyer</button>
+</form>
+
+</div>
+  <script src="js/app.js"></script>
+
+
+
+
+<footer>
+  <p>Copyright Société Antimatiere</p>
+  <p>Contact : 06.55.50.50.55</p>
+</footer>
+</body>
+
+</html>
