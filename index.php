@@ -1,7 +1,7 @@
 <?php
+session_start();
 
-echo "chain";
-
+require_once "php/varSession.inc.php";
 
 ?>
 

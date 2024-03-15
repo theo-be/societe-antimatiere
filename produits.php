@@ -9,7 +9,7 @@
 
     $categories = [];
     $categories["test"] = false;
-    foreach ($db as $cat => $aaaa) {
+    foreach ($db as $cat => $_) {
         $categories += [$cat => false];
     }
 
