@@ -31,7 +31,7 @@ if (isset($_GET["cat"])) {
     <style>
         /* Style pour agrandir l'image au survol */
         .agrandie {
-            transform: scale(4.0);
+            transform: scale(3.0);
             transition: transform 0.3s ease;  /* petite transition*/
         }
     </style>
@@ -63,7 +63,7 @@ foreach ($db as $key => $element) {
         foreach ($item as $spec => $desc) {
             echo "<td class='$spec'>";
             if ($spec == "photo") {
-                echo "<img src='$desc' alt='$spec' >";
+                echo "<img src='$desc' alt='$spec' width='200' height='auto'>";
             } else {
                 echo "$desc";
             }
