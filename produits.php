@@ -9,7 +9,7 @@
 
     $categories = [];
     $categories["test"] = false;
-    foreach ($db as $cat => $_) {
+    foreach ($db as $cat => $aaaa) {
         $categories += [$cat => false];
     }
 
@@ -46,22 +46,27 @@
     // key : categorie
     // element : produit
         echo "<h1>categorie $key</h1>";
-        echo "<table border='1'>
-    <tr>
-    <td>Photo</td>
-    <td>Reference</td>
-    <td>Description</td>
-    <td>Prix</td>
-    <td>Stock</td>
-    </tr>
-    ";
+        echo '<table border="1">
+                <tr>
+                <td class="photo">Photo</td>
+                <td class="nom">Nom</td>
+                <td class="reference">Reference</td>
+                <td class="description">Description</td>
+                <td class="prix">Prix</td>
+                <td class="stock">Stock</td>
+                </tr>
+                ';
 
         foreach ($element as $item) {
             // item : champ produit
             // elem : contenu
             echo "<tr>";
-            foreach ($item as $desc) {
-                echo "<td>$desc</td>";
+            foreach ($item as $spec => $desc) {
+                
+                echo "<td class='$spec'>";
+                if ($spec == "photo") echo "<img src='$desc' alt='$spec'>";
+                else echo "$desc";
+                echo "</td>";
             }
             echo "</tr>";
         }
@@ -81,6 +86,25 @@
 
 
 ?>
+
+    <button id="afficher">afficher</button>
+
+
+<script>
+document.getElementById("afficher").addEventListener("click", (e) => {
+    var stocks = document.getElementsByClassName("stock");
+    if (stocks[0].style.display == "none") {
+        for (var i = 0; i < stocks.length; i++) {
+            stocks[i].style.display = "inline";
+        }
+    }
+    else {
+        for (var i = 0; i < stocks.length; i++) {
+            stocks[i].style.display = "none";
+        }
+    }
+})
+</script>
 
 </body>
 </html>
