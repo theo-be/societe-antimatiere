@@ -1,0 +1,128 @@
+{
+  "generateurs": {
+    "dimensions": {
+      "photo": "favicon.ico",
+      "nom": "Collecteur d'antimatiere",
+      "reference": 1,
+      "description": "description collecteur",
+      "prix": 1,
+      "stock": 10
+    },
+    "processeur": {
+      "photo": "favicon.ico",
+      "nom": "Processeur quantique",
+      "reference": 2,
+      "description": "description processeur",
+      "prix": 1,
+      "stock": 10
+    },
+    "convertisseur": {
+      "photo": "favicon.ico",
+      "nom": "Convertisseur dimensionnel",
+      "reference": 3,
+      "description": "description convertisseur",
+      "prix": 1,
+      "stock": 10
+    },
+    "manipulateur": {
+      "photo": "favicon.ico",
+      "nom": "Manipulateur d'energie sombre",
+      "reference": 4,
+      "description": "description manipulateur",
+      "prix": 1,
+      "stock": 10
+    },
+    "extracteur": {
+      "photo": "favicon.ico",
+      "nom": "Extracteur de cristal temporel",
+      "reference": 5,
+      "description": "description extracteur",
+      "prix": 1,
+      "stock": 10
+    }
+  },
+  "ameliorations": {
+    "pack": {
+      "photo": "favicon.ico",
+      "nom": "Pack de dimensions",
+      "reference": 6,
+      "description": "description pack",
+      "prix": 1,
+      "stock": 10
+    },
+    "amplificateur": {
+      "photo": "favicon.ico",
+      "nom": "Amplificateur de boost dimensionnel",
+      "reference": 7,
+      "description": "description amplificateur",
+      "prix": 1,
+      "stock": 10
+    },
+    "conteneur": {
+      "photo": "favicon.ico",
+      "nom": "Conteneur de fragment d'infini",
+      "reference": 8,
+      "description": "description conteneur",
+      "prix": 1,
+      "stock": 10
+    },
+    "realite": {
+      "photo": "favicon.ico",
+      "nom": "Module de changement de realite",
+      "reference": 9,
+      "description": "description realite",
+      "prix": 1,
+      "stock": 10
+    },
+    "portail": {
+      "photo": "favicon.ico",
+      "nom": "Clef de portail multivers",
+      "reference": 10,
+      "description": "description clef",
+      "prix": 1,
+      "stock": 10
+    }
+  },
+  "manipulations": {
+    "manipulateur": {
+      "photo": "favicon.ico",
+      "nom": "Manipulateur temporel",
+      "reference": 11,
+      "description": "description manipulateur",
+      "prix": 1,
+      "stock": 10
+    },
+    "accelerateur": {
+      "photo": "favicon.ico",
+      "nom": "Accelerateur chrono",
+      "reference": 12,
+      "description": "description accelerateur",
+      "prix": 1,
+      "stock": 10
+    },
+    "dilatation": {
+      "photo": "favicon.ico",
+      "nom": "Module de dilatation temporelle",
+      "reference": 13,
+      "description": "description dilatation",
+      "prix": 1,
+      "stock": 10
+    },
+    "stabilisateur": {
+      "photo": "favicon.ico",
+      "nom": "Stabilisateur de fissure temporelle",
+      "reference": 14,
+      "description": "description stabilisateur",
+      "prix": 1,
+      "stock": 10
+    },
+    "confinement": {
+      "photo": "favicon.ico",
+      "nom": "Unite de confinement paradoxal",
+      "reference": 15,
+      "description": "description unite",
+      "prix": 1,
+      "stock": 10
+    }
+  }
+}
