@@ -92,7 +92,7 @@ foreach ($db as $key => $element) {
         echo "</div>";
         echo "</td>";
         // Add to cart button
-        echo "<td class='ajouter'><button disabled class='ajouter'>Ajouter au panier</button></td>";
+        echo "<td class='ajouter'><button disabled class='ajouter' onclick='addToCart(" . $item['reference'] . ", " . $item['stock'] . ")' >Ajouter au panier</button></td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -163,7 +163,22 @@ foreach ($db as $key => $element) {
             }
         });
     }
-    
+
+
+    function addToCart(reference, stock) {
+        var quantitySpan = document.querySelector('.quantity');
+        var quantity = parseInt(quantitySpan.textContent);
+
+        // Check if quantity is within stock limits
+        if (quantity > 0 && quantity <= stock) {
+            // Here, you can send the reference and quantity to your PHP script using AJAX or redirect the user to another page
+            window.location.href = "php/panier.php?ref=" + reference + "&quantite=" + quantity;
+        } else {
+            alert("Invalid quantity!");
+        }
+    }
+
+
 </script>
 
 </body>
