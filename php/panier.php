@@ -6,16 +6,17 @@ require_once "varSession.inc.php";
 
 $idproduit = $_GET["produit"];
 $quantite = $_GET["quantite"];
+$danspanier = false;
 
-if (in_array($idproduit, array_keys($_SESSION["panier"]))) {
-    foreach ($_SESSION["panier"] as $obj) {
-        if ($obj["id"] == $idproduit) {
-            $obj["quantite"] = $quantite;
-        }
+for ($i = 0; $i < count($_SESSION["panier"]); $i++) {
+    if ($_SESSION["panier"][$i]["id"] == $idproduit) {
+        $_SESSION["panier"][$i]["quantite"] = $quantite;
+        $danspanier = true;
+        break;
     }
-
 }
-else {
+
+if (!$danspanier) {
     $_SESSION["panier"][] = ["id" => $idproduit, "quantite" => $quantite];
 }
 
