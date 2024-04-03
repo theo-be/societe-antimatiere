@@ -11,8 +11,9 @@ nom varchar(30),
 prenom varchar(30),
 email varchar(50),
 genre varchar(6),
-matier varchar(30),
-date_de_naissance datetime);
+metier varchar(30),
+date_de_naissance datetime,
+ date_de_contact datetime);
 
 CREATE TABLE compte(
 id int PRIMARY KEY,
