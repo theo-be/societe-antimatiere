@@ -43,6 +43,10 @@ if (isset($_GET["cat"])) {
     .hidden {
         display: none;
     }
+    .quantity-controls button {
+        margin: 0 5px;
+        cursor: pointer;
+    }
 </style>
 
 <?php
@@ -61,6 +65,8 @@ foreach ($db as $key => $element) {
                 <td class="description">Description</td>
                 <td class="prix">Prix</td>
                 <td class="stock">Stock</td>
+                <td class="quantite">Quantité commandée</td>
+                <td class="ajouter">Ajouter au panier</td>
             </tr>';
 
     foreach ($element as $item) {
@@ -76,11 +82,23 @@ foreach ($db as $key => $element) {
             }
             echo "</td>";
         }
+        // Quantity controls (plus and minus buttons)
+        echo "<td class='quantite'>";
+        echo "<div class='quantity-controls'>";
+        echo "<button class='minus'>-</button>";
+        echo "<span class='quantity' data-stock='{$item['stock']}'>0</span>";
+
+        echo "<button class='plus'>+</button>";
+        echo "</div>";
+        echo "</td>";
+        // Add to cart button
+        echo "<td class='ajouter'><button disabled class='ajouter'>Ajouter au panier</button></td>";
         echo "</tr>";
     }
     echo "</table>";
 }
 ?>
+
 
 <button id="Stock">Stock</button>
 
@@ -103,8 +121,50 @@ foreach ($db as $key => $element) {
             this.classList.remove('agrandie');
         });
     });
-</script>
 
+    // Function to handle quantity adjustments and button activations
+    var quantityControls = document.querySelectorAll('.quantity-controls');
+    quantityControls.forEach(function(control) {
+        var quantitySpan = control.querySelector('.quantity');
+        var plusButton = control.querySelector('.plus');
+        var minusButton = control.querySelector('.minus');
+
+        plusButton.addEventListener('click', function() {
+            var quantity = parseInt(quantitySpan.textContent);
+            var stock = parseInt(quantitySpan.dataset.stock);
+            if (quantity < stock) {
+                quantitySpan.textContent = quantity + 1;
+            }
+            updateAddToCartButtonState();
+        });
+
+        minusButton.addEventListener('click', function() {
+            var quantity = parseInt(quantitySpan.textContent);
+            if (quantity > 0) {
+                quantitySpan.textContent = quantity - 1;
+            }
+            updateAddToCartButtonState();
+        });
+    });
+
+    function updateAddToCartButtonState() {
+        var rows = document.querySelectorAll('tr');
+        rows.forEach(function(row) {
+            var quantitySpan = row.querySelector('.quantity');
+            if (quantitySpan) {
+                var addButton = row.querySelector('.ajouter button');
+                var quantity = parseInt(quantitySpan.textContent);
+                var stock = parseInt(quantitySpan.dataset.stock);
+                if (quantity > 0 && quantity <= stock) {
+                    addButton.removeAttribute('disabled');
+                } else {
+                    addButton.setAttribute('disabled', 'disabled');
+                }
+            }
+        });
+    }
+    
+</script>
 
 </body>
 </html>
