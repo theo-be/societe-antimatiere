@@ -48,8 +48,8 @@ INSERT INTO categorie VALUE (1,'Celestial');
 INSERT INTO categorie VALUE (2,'Glyph');
 INSERT INTO categorie VALUE (3,'Succes');
 
-INSERT INTO produit VALUE(1,'Teresa',10,1,'','Teresa, celestial des realité',1);
-INSERT INTO produit VALUE(2,'Effarig',10,1,'','Effarig, celestial des anciennes relique',1);
+INSERT INTO produit VALUE(1,'Teresa',10,1,'','Teresa, celestial des realités',1);
+INSERT INTO produit VALUE(2,'Effarig',10,1,'','Effarig, celestial des anciennes reliques',1);
 INSERT INTO produit VALUE(3,'Anonyme',10,1,'','L\'anonyme, celestial des prisoniers',1);
 INSERT INTO produit VALUE(4,'V',10,1,'','V, celestial des succes',1);
 INSERT INTO produit VALUE(5,'Ra',10,1,'','Ra, celestial de l\'oublie',1);
@@ -57,7 +57,7 @@ INSERT INTO produit VALUE(6,'Lai\'tela',10,1,'','Lai\'tela, celestial de l\'anti
 
 INSERT INTO produit VALUE(7,'Glyphe de puissance',10,2,'','Amplifie la puissance des dimensions d\'antimatiere',1);
 INSERT INTO produit VALUE(8,'Glyphe de l\'infini',10,2,'','Amplifie la puissance des dimensions d\'infini',1);
-INSERT INTO produit VALUE(9,'Glyphe de temp',10,2,'','Amplifie la puissance des dimensions temporelles',1);
+INSERT INTO produit VALUE(9,'Glyphe de temps',10,2,'','Amplifie la puissance des dimensions temporelles',1);
 INSERT INTO produit VALUE(10,'Glyphe de replication',10,2,'','Amplification des reproduction des replicantis',1);
 INSERT INTO produit VALUE(11,'Glyphe de dilatation',10,2,'','Amplifie la puissance des dimensions d\'antimatiere lors de la dilatation',1);
 INSERT INTO produit VALUE(12,'Glyphe d\'Effarig',10,2,'','',1);
