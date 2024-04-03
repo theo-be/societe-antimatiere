@@ -82,10 +82,10 @@ foreach ($db as $key => $element) {
 }
 ?>
 
-<button id="afficher">Afficher</button>
+<button id="Stock">Stock</button>
 
 <script>
-    document.getElementById("afficher").addEventListener("click", (e) => {
+    document.getElementById("Stock").addEventListener("click", (e) => {
         var stocks = document.querySelectorAll('.stock');
         stocks.forEach(function(stock) {
             stock.classList.toggle('hidden');
