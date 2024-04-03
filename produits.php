@@ -60,12 +60,14 @@
             // elem : contenu
             echo "<tr>";
             foreach ($item as $spec => $desc) {
-                
                 echo "<td class='$spec'>";
-                if ($spec == "photo") echo "<img src='$desc' alt='$spec'>";
-                else echo "$desc";
-                echo "</td>";
-            }
+                if ($spec == "photo") {
+                    echo "<img src='$desc' alt='$spec' width='200' height='auto'>";
+                } else {
+                    echo "$desc";
+                }
+            echo "</td>";
+        }
             echo "</tr>";
         }
 
@@ -102,6 +104,18 @@ document.getElementById("afficher").addEventListener("click", (e) => {
         }
     }
 })
+
+// Fonction pour agrandir chaque image individuellement au survol
+    var images = document.querySelectorAll('.photo img');
+    images.forEach(function(image) {
+        image.addEventListener('mouseenter', function() {
+            this.classList.add('agrandie'); // Ajoute la classe pour agrandir l'image au survol
+        });
+
+        image.addEventListener('mouseleave', function() {
+            this.classList.remove('agrandie'); // Retire la classe pour réduire l'image à sa taille normale
+        });
+    });
 </script>
 
 </body>
