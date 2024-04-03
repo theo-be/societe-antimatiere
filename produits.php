@@ -169,9 +169,8 @@ foreach ($db as $key => $element) {
         var quantitySpan = document.querySelector('.quantity');
         var quantity = parseInt(quantitySpan.textContent);
 
-        // Check if quantity is within stock limits
+        // Check quantity
         if (quantity > 0 && quantity <= stock) {
-            // Here, you can send the reference and quantity to your PHP script using AJAX or redirect the user to another page
             window.location.href = "php/panier.php?ref=" + reference + "&quantite=" + quantity;
         } else {
             alert("Invalid quantity!");
