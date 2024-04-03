@@ -92,7 +92,7 @@ foreach ($db as $key => $element) {
         echo "</div>";
         echo "</td>";
         // Add to cart button
-        echo "<td class='ajouter'><button disabled class='ajouter' onclick='addToCart(" . $item['reference'] . ", " . $item['stock'] . ")' >Ajouter au panier</button></td>";
+        echo "<td class='ajouter'><button disabled class='ajouter' onclick='addToCart({$item['reference']}, {$item['stock']}, event)'>Ajouter au panier</button></td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -165,18 +165,21 @@ foreach ($db as $key => $element) {
     }
 
 
-    function addToCart(reference, stock) {
-        var quantitySpan = document.querySelector('.quantity');
+    function addToCart(reference, stock, event) {
+        // Get the parent row of the clicked button
+        var row = event.target.closest('tr');
+
+        // Find the quantity span within the row
+        var quantitySpan = row.querySelector('.quantity');
         var quantity = parseInt(quantitySpan.textContent);
 
         // Check quantity
         if (quantity > 0 && quantity <= stock) {
-            window.location.href = "php/panier.php?ref=" + reference + "&quantite=" + quantity;
+            window.location.href = "php/panier.php?produit=" + reference + "&quantite=" + quantity;
         } else {
             alert("Invalid quantity!");
         }
     }
-
 
 </script>
 
