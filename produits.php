@@ -39,6 +39,12 @@ if (isset($_GET["cat"])) {
 </head>
 <body>
 
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
 <?php
 // affichage du tableau
 foreach ($db as $key => $element) {
@@ -80,28 +86,25 @@ foreach ($db as $key => $element) {
 
 <script>
     document.getElementById("afficher").addEventListener("click", (e) => {
-        var stocks = document.getElementsByClassName("stock");
-        for (var i = 0; i < stocks.length; i++) {
-            if (stocks[i].style.display == "none") {
-                stocks[i].style.display = "inline";
-            } else {
-                stocks[i].style.display = "none";
-            }
-        }
+        var stocks = document.querySelectorAll('.stock');
+        stocks.forEach(function(stock) {
+            stock.classList.toggle('hidden');
+        });
     });
 
-    // Fonction pour agrandir chaque image individuellement au survol
+    // Function to enlarge image on hover
     var images = document.querySelectorAll('.photo img');
     images.forEach(function(image) {
         image.addEventListener('mouseenter', function() {
-            this.classList.add('agrandie'); // Ajoute la classe pour agrandir l'image au survol
+            this.classList.add('agrandie');
         });
 
         image.addEventListener('mouseleave', function() {
-            this.classList.remove('agrandie'); // Retire la classe pour réduire l'image à sa taille normale
+            this.classList.remove('agrandie');
         });
     });
 </script>
+
 
 </body>
 </html>
