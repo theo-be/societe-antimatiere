@@ -1,0 +1,120 @@
+body{
+    overflow: hidden;
+    text-align: center;
+    font-family: Typewriter, serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.bandeau{
+    border-bottom: 2px solid #127a20; /* Épaisseur et couleur de la bordure */
+    width: 100%; /* Largeur de la div */
+    height: 2px; /* Hauteur de la bordure, ajustez selon vos besoins */
+    margin-bottom: 20px; /* Marge en bas pour espacement */
+}
+
+.menu{
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-anchor: start;
+    border-style: solid;
+    border-width: 1px;
+    /*border-color: #2fa6f7;*/
+    border-collapse: collapse;
+    --color-text-inverted: black;
+    --color-base: #000000;
+    --color-disabled: #2d2421;
+    --color-accent: red;
+    --color-notification: yellow;
+    --color-overlay: rgba(60, 60, 100, 50%);
+}
+
+.buyable{
+    display: flex;
+    justify-content: center;
+    border-width: 1px;
+    border-style:solid;
+    padding: 10px;
+    border-color: #b84b5f;
+    color:#ffffff;
+    background-color: #2d2421;
+    transition:200ms;
+}
+
+.buyable:hover{
+    background-color: #b84b5f;
+    color:#000000;
+}
+
+.connexion{
+    border: 1px solid #4980cc;
+    color:#ffffff;
+    text-decoration: none;
+    position: absolute;
+    top:0;
+    right:0;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right:25px;
+    white-space: nowrap;
+    transition: 200ms;
+}
+
+.connexion:hover{
+    background-color: #4980cc;
+    color:#000000;
+}
+
+.mainoption{
+    border: 1px solid #127a20;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right:25px;
+    white-space: nowrap;
+    transition: 200ms;
+}
+
+.mainoption:hover{
+    background-color: #5ac467;
+    color:#000000;
+}
+
+.side{
+    border: 1px solid #2fa6f7;
+    text-decoration: none;
+    transition: 200ms;
+    margin: 100px;
+}
+
+.side:hover{
+    background-color: #2fa6f7;
+}
+
+.sideecrit{
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.sideecrit:hover{
+    color: #000000;
+}
+
+.menubuyable{
+    display: flex;
+    justify-content: center;
+}
+.menuinverted{
+    color:black;
+}
+

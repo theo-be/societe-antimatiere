@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="accueil.css">
   <meta name="description" content="">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -18,63 +18,54 @@
 <div class="banner">
   <!-- Logo du site -->
   <img src="icon.png" alt="Logo du site" id="logo">
+  <div class="bandeau"></div>
   <h1 id="title">Société Antimatiere</h1>
 </div>
   <nav>
     <!-- Menu horizontal -->
-    <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">Générateurs d'Antimatière</a></li>
-      <li><a href="#">Améliorations Dimensionnelles</a></li>
-      <li><a href="#">Dispositifs de Manipulation Temporelle</a></li>
-      <li><a href="#">Contact</a></li>
+    <table class='menu'>
+      <tr href="#" class="side"><td><a class="sideecrit" >Accueil</a></td></tr>
+      <tr href="#" class="side"><td><a class="sideecrit" >Générateurs d'Antimatière</a></td></tr>
+      <tr href="#" class="side"><td><a class="sideecrit" >Améliorations Dimensionnelles</a></td></tr>
+      <tr href="#" class="side"><td><a class="sideecrit" >Dispositifs de Manipulation Temporelle</a></td></tr>
+      <tr href="#" class="side"><td><a class="sideecrit" >Contact</a></td></tr>
     </ul>
   </nav>
-  <div class="connexion">
+  <div>
     <!-- Espace de connexion -->
-    <a href="#">Se connecter</a>
+    <a href="#" class="connexion">Se connecter</a>
   </div>
 </header>
 
 <!-- partie principale + menu -->
 <div class="sidemenu">
   <nav>
-    <ul>
-      <li><a href="#">Accueil</a></li>
-      <li>Nos produits</a></li>
-      <li><a href="#">Générateurs d'Antimatière</a></li>
-      <li><a href="#">Améliorations Dimensionnelles</a></li>
-      <li><a href="#">Dispositifs de Manipulation Temporelle</a></li>
-    </ul>
+    <div>
+      <h3><a href="#" class="mainoption">Accueil</a></li>
+      <h4><a href="#" class="mainoption"> Nos produits</a></li>
+      <h5><a href="#" class="mainoption">Générateurs d'Antimatière</a></li>
+      <h6><a href="#" class="mainoption">Améliorations Dimensionnelles</a></li>
+      <h7><a href="#" class="mainoption">Dispositifs de Manipulation Temporelle</a></li>
+    </div>
   </nav>
 </div>
 <div class="generateur">
   <h2>Générateurs d'Antimatière</h2>
-  <table>
-    <tr>
-      <td>ga1</td>
-      <td>Collecteur d'Antimatière</td>
-      <td>100€</td>
+  <table class="menubuyable" >
+    <tr class="buyable">
+      <td>Collecteur d'Antimatière <br>100€</td>
     </tr>
-    <tr>
-      <td>ga2</td>
-      <td>Processeur Quantique</td>
-      <td>100€</td>
+    <tr class="buyable">
+      <td>Processeur Quantique<br>100€</td>
     </tr>
-    <tr>
-      <td>ga3</td>
-      <td>Convertisseur Dimensionnel</td>
-      <td>100€</td>
+    <tr class="buyable">
+      <td>Convertisseur Dimensionnel<br>100€</td>
     </tr>
-    <tr>
-      <td>ga4</td>
-      <td>Manipulateur d'Énergie Sombre</td>
-      <td>200€</td>
+    <tr class="buyable">
+      <td>Manipulateur d'Énergie Sombre<br>200€</td>
     </tr>
-    <tr>
-      <td>ga5</td>
-      <td>Extracteur de Cristal Temporel</td>
-      <td>300€</td>
+    <tr class="buyable">
+      <td>Extracteur de Cristal Temporel<br>300€</td>
     </tr>
   </table>
 
@@ -84,11 +75,11 @@
 
 
 
-
+<!-- ce sera dans une autre page
 <footer>
   <p>Copyright Société Antimatiere</p>
   <p>Contact : 06.55.50.50.55</p>
-</footer>
+</footer> -->
 </body>
 
 </html>
