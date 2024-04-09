@@ -1,5 +1,5 @@
 body{
-    overflow: hidden;
+    overflow-x: hidden;
     text-align: center;
     font-family: Typewriter, serif;
     font-size: 1.1rem;
