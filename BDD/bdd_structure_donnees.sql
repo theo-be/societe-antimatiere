@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 10, 2024 at 03:21 PM
+-- Generation Time: Apr 10, 2024 at 04:26 PM
 -- Server version: 10.6.16-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.14
 
@@ -133,19 +133,25 @@ CREATE TABLE `produit` (
 --
 
 INSERT INTO `produit` (`id`, `nom`, `quantite_en_stock`, `id_categorie`, `photo`, `text_description`, `prix`) VALUES
-(1, 'Teresa', 10, 1, '', 'Teresa, celestial des realités', 1),
-(2, 'Effarig', 10, 1, '', 'Effarig, celestial des anciennes reliques', 1),
-(3, 'Anonyme', 10, 1, '', 'L\'anonyme, celestial des prisoniers', 1),
-(4, 'V', 10, 1, '', 'V, celestial des succes', 1),
-(5, 'Ra', 10, 1, '', 'Ra, celestial de l\'oublie', 1),
-(6, 'Lai\'tela', 10, 1, '', 'Lai\'tela, celestial de l\'antimatiere', 1),
-(7, 'Glyphe de puissance', 10, 2, '', 'Amplifie la puissance des dimensions d\'antimatiere', 1),
-(8, 'Glyphe de l\'infini', 10, 2, '', 'Amplifie la puissance des dimensions d\'infini', 1),
-(9, 'Glyphe de temps', 10, 2, '', 'Amplifie la puissance des dimensions temporelles', 1),
-(10, 'Glyphe de replication', 10, 2, '', 'Amplification des reproduction des replicantis', 1),
-(11, 'Glyphe de dilatation', 10, 2, '', 'Amplifie la puissance des dimensions d\'antimatiere lors de la dilatation', 1),
-(12, 'Glyphe d\'Effarig', 10, 2, '', '', 1),
-(13, 'Glyphe de la realite', 10, 2, '', '', 1);
+(1, 'Teresa', 10, 1, 'cel_teresa.png', 'Teresa, celestial des realités', 1),
+(2, 'Effarig', 10, 1, 'cel_effarig.png', 'Effarig, celestial des anciennes reliques', 1),
+(3, 'Anonyme', 10, 1, 'cel_anonyme.png', 'L\'anonyme, celestial des prisoniers', 1),
+(4, 'V', 10, 1, 'cel_v.png', 'V, celestial des succes', 1),
+(5, 'Ra', 10, 1, 'cel_ra.png', 'Ra, celestial de l\'oublie', 1),
+(6, 'Lai\'tela', 10, 1, 'cel_laitela.png', 'Lai\'tela, celestial de l\'antimatiere', 1),
+(7, 'Glyphe de puissance', 10, 2, 'glyphe_puissance.png', 'Amplifie la puissance des dimensions d\'antimatiere', 1),
+(8, 'Glyphe de l\'infini', 10, 2, 'glyphe_infinite.png', 'Amplifie la puissance des dimensions d\'infinité', 1),
+(9, 'Glyphe de temps', 10, 2, 'glyphe_temps.png', 'Amplifie la puissance des dimensions temporelles', 1),
+(10, 'Glyphe de replication', 10, 2, 'glyphe_replication.png', 'Amplification des reproduction des replicantis', 1),
+(11, 'Glyphe de dilatation', 10, 2, 'glyphe_dilatation.png', 'Amplifie la puissance des dimensions d\'antimatiere lors de la dilatation', 1),
+(12, 'Glyphe d\'Effarig', 10, 2, 'glyphe_effarig.png', 'Amplifie les effets des reliques', 1),
+(13, 'Glyphe de la realite', 10, 2, 'glyphe_realite.png', 'Amplifie les bonus de la réalité', 1),
+(14, 'Fake News', 10, 3, 'succes_news.png', 'Description', 1),
+(15, 'Eternité', 10, 3, 'succes_eternite.png', 'Description', 1),
+(16, 'Ticket McDo', 10, 3, 'succes_mcdo.png', 'Description', 1),
+(17, 'Sacrifice', 10, 3, 'succes_sacrifice.png', 'Description', 1),
+(18, 'Yo dawg', 10, 3, 'succes_yodawg.png', 'Description', 1),
+(19, 'Pelle', 10, 1, 'cel_pelle.png', 'Description pelle', 1);
 
 --
 -- Indexes for dumped tables
