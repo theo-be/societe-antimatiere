@@ -14,13 +14,7 @@ require_once "php/varSession.inc.php";
     <link rel="stylesheet" href="css/styles.css">
     <meta name="description" content="">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        .rouge {
-            border: red;
-            background: red;
-            color: red;
-        }
-    </style>
+
 </head>
 
 
@@ -68,7 +62,6 @@ require_once "php/varSession.inc.php";
         require_once "php/formulaire_contact_prerempli.php";
 //        echo "contact_ok : " . $_SESSION["contact_ok"] . "<br>";
     }
-//    var_dump($_SESSION["formulaire_contact"]);
 ?>
 <!--<script src="js/app.js"></script>-->
 
