@@ -1,103 +1,124 @@
 <?php
-session_start();
-require_once "php/varSession.inc.php";
 
-$dbtext = file_get_contents("php/db.json");
-$db = json_decode($dbtext, true);
+    session_start();
+    require_once "php/varSession.inc.php";
 
-$categories = [];
-$categories["test"] = false;
-foreach ($db as $cat => $aaaa) {
-    $categories += [$cat => false];
-}
 
-$selectionUtilisateur = false;
 
-// prise en compte des categories demandees
-if (isset($_GET["cat"])) {
-    $selectionUtilisateur = true;
-    $query = explode(',', $_GET["cat"]);
-    foreach ($query as $item) {
-        if (isset($categories["$item"])) {
-            $categories[$item] = true;
+    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+//    $categoriesrequete = $_SESSION["bdd"]->query("select nom from categorie");
+    $categoriesrequete = $db->query("select nom from categorie");
+    $categories = array();
+    while ($categorie = $categoriesrequete->fetch())
+        $categories[] = $categorie["nom"];
+
+    $categoriesrequete->closeCursor();
+
+    $selectionUtilisateur = false;
+
+    // prise en compte des categories demandees
+
+    $cat = array();
+    if (isset($_GET["cat"])) {
+        $selectionUtilisateur = true;
+        $query = explode(',', $_GET["cat"]);
+        foreach ($query as $item) {
+            if (in_array($item, $categories))
+                $cat[] = $item;
         }
     }
-}
+
+    if ($selectionUtilisateur)
+        $selection = array_diff($categories, array_diff($categories, $cat));
+    else
+        $selection = $categories;
+
+//    var_dump($selection);
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <title>Affichage des produits</title>
-    <style>
-        /* Style pour agrandir l'image au survol */
-        .agrandie {
-            transform: scale(3.0);
-            transition: transform 0.3s ease;  /* petite transition*/
-        }
-    </style>
-</head>
+<head></head>
 <body>
 
-<style>
-    .hidden {
-        display: none;
-    }
-    .quantity-controls button {
-        margin: 0 5px;
-        cursor: pointer;
-    }
-</style>
+
+
 
 <?php
-// affichage du tableau
-foreach ($db as $key => $element) {
-    if (!$categories[$key] && $selectionUtilisateur)
-        continue;
 
-    // affichage du tableau
-    echo "<h1>Catégorie $key</h1>";
+// affichage des produits
+
+foreach ($selection as $value) {
+    $requete = $db->prepare("select * from produit where id_categorie = (select id from categorie where nom=?)");
+    $requete->execute(array($value));
+
+    echo "<h1>categorie $value</h1>";
     echo '<table border="1">
-            <tr>
+                <tr>
                 <td class="photo">Photo</td>
                 <td class="nom">Nom</td>
                 <td class="reference">Reference</td>
                 <td class="description">Description</td>
                 <td class="prix">Prix</td>
                 <td class="stock">Stock</td>
-                <td class="quantite">Quantité commandée</td>
                 <td class="ajouter">Ajouter au panier</td>
-            </tr>';
+                </tr>
+                ';
 
-    foreach ($element as $item) {
-        // item : champ produit
-        // elem : contenu
-        echo "<tr>";
-        foreach ($item as $spec => $desc) {
-            echo "<td class='$spec'>";
-            if ($spec == "photo") {
-                echo "<img src='$desc' alt='$spec' width='200' height='auto'>";
-            } else {
-                echo "$desc";
-            }
-            echo "</td>";
-        }
+    while ($resultat = $requete->fetch()) {
+        // key : categorie
+        // element : produit
+
+        echo "<tr>   
+                <td class='photo'>" . $resultat["photo"] . "</td>
+                <td class='nom'>" . $resultat["nom"] . "</td>
+                <td class='reference'>" . $resultat["id"] . "</td>
+                <td class='description'>" . $resultat["text_description"] . "</td>
+                <td class='prix'>" . $resultat["prix"] . "</td>";
         // Quantity controls (plus and minus buttons)
         echo "<td class='quantite'>";
         echo "<div class='quantity-controls'>";
         echo "<button class='minus'>-</button>";
-        echo "<span class='quantity' data-stock='{$item['stock']}'>0</span>";
+        echo "<span class='quantity' data-stock='{$resultat["quantite_en_stock"]}'>0</span>";
 
         echo "<button class='plus'>+</button>";
         echo "</div>";
         echo "</td>";
         // Add to cart button
         echo "<td class='ajouter'><button disabled class='ajouter' onclick='addToCart({$item['reference']}, {$item['stock']}, event)'>Ajouter au panier</button></td>";
-        echo "</tr>";
+echo "</tr>";
+
+
     }
+
     echo "</table>";
+
+
+    $requete->closeCursor();
+
 }
+
+
 ?>
+
+<!--    <button id="afficher">afficher</button>-->
+
+<!---->
+<!--<script>-->
+<!--document.getElementById("afficher").addEventListener("click", (e) => {-->
+<!--    let stocks = document.getElementsByClassName("stock");-->
+<!--    if (stocks[0].style.display === "none") {-->
+<!--        for (let i = 0; i < stocks.length; i++) {-->
+<!--            stocks[i].style.display = "inline";-->
+<!--        }-->
+<!--    }-->
+<!--    else {-->
+<!--        for (let j = 0; j < stocks.length; j++) {-->
+<!--            stocks[j].style.display = "none";-->
+<!--        }-->
+<!--    }-->
+<!--})-->
+<!--</script>-->
 
 
 <button id="Stock">Stock</button>

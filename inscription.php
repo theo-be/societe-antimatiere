@@ -15,8 +15,8 @@ require_once "php/varSession.inc.php";
 </head>
 <body>
     <form action="php/signin_post.php" method="post">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <label for="id">Pseudo</label>
+        <input type="text" name="id" id="id">
         <label for="mdp">Mot de passe</label>
         <input type="password" name="mdp" id="mdp">
         <label for="mdp2">Répéter le mot de passe</label>
