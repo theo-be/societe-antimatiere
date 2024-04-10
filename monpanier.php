@@ -63,6 +63,7 @@ if (count($_SESSION["panier"]) == 0) {
 <script>
     function passerCommande() {
         alert("Commande réalisée avec succès !");
+        unset($_SESSION['panier']);
         window.location.href = "produits.php";
     }
 </script>
