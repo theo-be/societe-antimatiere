@@ -6,7 +6,7 @@
 
 
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-//    $categoriesrequete = $_SESSION["bdd"]->query("select nom from categorie");
+
     $categoriesrequete = $db->query("select nom from categorie");
     $categories = array();
     while ($categorie = $categoriesrequete->fetch())
@@ -18,9 +18,12 @@
 
     // prise en compte des categories demandees
 
+    $_SESSION["page"] = $_SERVER["REQUEST_URI"];
+
     $cat = array();
     if (isset($_GET["cat"])) {
         $selectionUtilisateur = true;
+
         $query = explode(',', $_GET["cat"]);
         foreach ($query as $item) {
             if (in_array($item, $categories))
@@ -33,7 +36,6 @@
     else
         $selection = $categories;
 
-//    var_dump($selection);
 ?>
 
 <!doctype html>
@@ -52,46 +54,44 @@ foreach ($selection as $value) {
     $requete = $db->prepare("select * from produit where id_categorie = (select id from categorie where nom=?)");
     $requete->execute(array($value));
 
-    echo "<h1>categorie $value</h1>";
-    echo '<table border="1">
-                <tr>
-                <td class="photo">Photo</td>
-                <td class="nom">Nom</td>
-                <td class="reference">Reference</td>
-                <td class="description">Description</td>
-                <td class="prix">Prix</td>
-                <td class="stock">Stock</td>
-                <td class="ajouter">Ajouter au panier</td>
-                </tr>
-                ';
+    echo "<h1>Catégorie $value</h1>";
+
 
     while ($resultat = $requete->fetch()) {
-        // key : categorie
-        // element : produit
 
-        echo "<tr>   
-                <td class='photo'>" . $resultat["photo"] . "</td>
-                <td class='nom'>" . $resultat["nom"] . "</td>
-                <td class='reference'>" . $resultat["id"] . "</td>
-                <td class='description'>" . $resultat["text_description"] . "</td>
-                <td class='prix'>" . $resultat["prix"] . "</td>";
-        // Quantity controls (plus and minus buttons)
-        echo "<td class='quantite'>";
-        echo "<div class='quantity-controls'>";
-        echo "<button class='minus'>-</button>";
-        echo "<span class='quantity' data-stock='{$resultat["quantite_en_stock"]}'>0</span>";
+        echo '
+        <div class="boite-produit">
+            <a href="produit.php?id=' . $resultat["id"] . '" class="lien-produit">
+                <div class="image">
+                <img src="img/' . $resultat["photo"] . '" alt="' . $resultat["nom"] . '">
+                </div>
+                <div class="nom-produit">' . $resultat["nom"] . '</div>
+                <div class="prixproduit">' . $resultat["prix"] . ' €</div>
+            </a>
+        </div>';
 
-        echo "<button class='plus'>+</button>";
-        echo "</div>";
-        echo "</td>";
-        // Add to cart button
-        echo "<td class='ajouter'><button disabled class='ajouter' onclick='addToCart({$item['reference']}, {$item['stock']}, event)'>Ajouter au panier</button></td>";
-echo "</tr>";
+//        echo "<tr>
+//                <td class='photo'>" . $resultat["photo"] . "</td>
+//                <td class='nom'>" . $resultat["nom"] . "</td>
+//                <td class='reference'>" . $resultat["id"] . "</td>
+//                <td class='description'>" . $resultat["text_description"] . "</td>
+//                <td class='prix'>" . $resultat["prix"] . "</td>";
+//        // Quantity controls (plus and minus buttons)
+//        echo "<td class='quantite'>";
+//        echo "<div class='quantity-controls'>";
+//        echo "<button class='minus'>-</button>";
+//        echo "<span class='quantity' data-stock='{$resultat["quantite_en_stock"]}'>0</span>";
+//
+//        echo "<button class='plus'>+</button>";
+//        echo "</div>";
+//        echo "</td>";
+//        // Add to cart button
+//        echo "<td class='ajouter'><a class='ajouter' href='php/panier.php?produit={$resultat["id"]}&quantite=1'>Ajouter au panier</a></td>";
+//echo "</tr>";
 
 
     }
 
-    echo "</table>";
 
 
     $requete->closeCursor();
@@ -100,6 +100,30 @@ echo "</tr>";
 
 
 ?>
+
+<!--boite lambda-->
+
+<!--
+<div class="boite-produit">
+    <a href="produit.php?id=" class="lien-produit">
+        <div class="image"><img src="img/" alt=""></div>
+        <div class="nom-produit">Nom du produit</div>
+        <div class="prixproduit">2000 €</div>
+    </a>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
 
 <!--    <button id="afficher">afficher</button>-->
 
