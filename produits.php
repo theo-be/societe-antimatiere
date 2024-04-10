@@ -47,6 +47,10 @@
 
 
 <?php
+// recuperation de la page actuelle avec la methode GET
+$_SESSION["page"] = $_SERVER["REQUEST_URI"];
+
+
 
 // affichage des produits
 

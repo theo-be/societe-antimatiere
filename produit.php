@@ -17,13 +17,14 @@ require_once "php/varSession.inc.php";
 <body>
 
 <?php
+
 if (!isset($_GET) || !isset($_GET["id"])) {
     // erreur dans l'url
     echo "Aucun produit sélectionné";
 } else {
     $id = $_GET["id"];
     // en lever le mot de passe ici c'est pour les test
-    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     $requete = $db->prepare("select * from produit where id=?");
     $requete->execute(array($id));
@@ -47,9 +48,9 @@ if (!isset($_GET) || !isset($_GET["id"])) {
                 <span class="prix">
                 <?= $prix ?>&euro;
             </span>
-                <form action="index.php?page=panier" method="post">
-                    <input type="number" name="quantity" value="1" min="1" max="<?= $stock ?>" placeholder="Quantity" required>
-                    <input type="hidden" name="product_id" value="<?= $id ?>">
+                <form action="php/panier.php" method="post">
+                    <input type="number" name="quantite" value="1" min="1" max="<?= $stock ?>" placeholder="Quantity" required>
+                    <input type="hidden" name="id" value="<?= $id ?>">
                     <input type="submit" value="Ajouter au panier">
                 </form>
                 <div class="description">
