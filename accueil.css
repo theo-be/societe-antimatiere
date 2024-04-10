@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    font-family:'Lato',sans-serif;
+}
+
 body{
     text-align: center;
-    font-family: Typewriter, serif;
     font-size: 1.1rem;
     font-weight: 300;
     line-height: 1.5;
@@ -14,16 +19,29 @@ body{
 .bandeauvert{
     border-bottom: 2px solid #127a20; /* Épaisseur et couleur de la bordure */
     width: 100%; /* Largeur de la div */
-    height: 2px; /* Hauteur de la bordure, ajustez selon vos besoins */
-    margin-bottom: 20px; /* Marge en bas pour espacement */
+    /*height: 50px; /* Hauteur de la bordure, ajustez selon vos besoins */
+    margin-top: 65px; /* Marge en bas pour espacement */
 }
 
+.bandeaubleu{
+    border-bottom: 2px solid #2fa6f7; /* Épaisseur et couleur de la bordure */
+    margin-top: 65px; /* Marge en bas pour espacement */
+    z-index: 1;
+}
 
+.logotitre{
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    align-items:center;
+    font-size: 13px;
+}
 
 .menu{
     color: #ffffff;
     position: absolute;
-    top: 0;
+    top: 65px;
     left: 0;
     text-anchor: start;
     border-style: solid;
@@ -58,12 +76,13 @@ body{
 .connexion{
     border: 1px solid #4980cc;
     color:#ffffff;
+    background-color: black;
     text-decoration: none;
     position: absolute;
     top:0;
     right:0;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 13px;
     margin-right:25px;
     white-space: nowrap;
     transition: 200ms;
@@ -73,6 +92,38 @@ body{
 .connexion:hover{
     background-color: #4980cc;
     color:#000000;
+}
+
+.inscription{
+    border: 1px solid orange;
+    color:#ffffff;
+    background-color: black;
+    text-decoration: none;
+    position: absolute;
+    top:0;
+    right:125px;
+    padding: 5px;
+    margin-top: 13px;
+    margin-right:25px;
+    white-space: nowrap;
+    transition: 200ms;
+}
+
+.inscription:hover{
+    background-color: orange;
+    color:#000000;
+}
+
+.cart{
+    position: absolute;
+    top:13px;
+    right:250px;
+    transition:500ms;
+
+}
+
+.cart:hover{
+    border: 1px solid orange;
 }
 
 .mainoption{
@@ -93,11 +144,14 @@ body{
 
 .side{
     border: 1px solid #2fa6f7;
+    background-color: black;
     text-decoration: none;
     transition: 200ms;
     margin: 100px;
     z-index: 2;
+    height: 52px;
 }
+
 
 .side:hover{
     background-color: #2fa6f7;
@@ -122,3 +176,30 @@ body{
     color:black;
 }
 
+.foot{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding:25px;
+}
+
+.footcontenu{
+    text-align: right;
+}
+
+.submit{
+    border: 1px solid green;
+    background-color: black;
+    color:white;
+    padding:5px;
+    transition:200ms;
+}
+
+.submit:hover{
+    background-color: green;
+    color:black;
+}
+
+.formulaire{
+    background-color: gray;
+}
