@@ -4,8 +4,8 @@
 session_start();
 require_once "varSession.inc.php";
 
-$idproduit = $_GET["produit"];
-$quantite = $_GET["quantite"];
+$idproduit = $_POST["id"];
+$quantite = $_POST["quantite"];
 $danspanier = false;
 
 for ($i = 0; $i < count($_SESSION["panier"]); $i++) {
@@ -20,5 +20,5 @@ if (!$danspanier) {
     $_SESSION["panier"][] = ["id" => $idproduit, "quantite" => $quantite];
 }
 
-var_dump($_SESSION["panier"]);
+header("Location:". $_SESSION["page"]);
 
