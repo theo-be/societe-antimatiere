@@ -3,13 +3,6 @@
     session_start();
     require_once "varSession.inc.php";
 
-    /*
-     * a faire
-     *
-     * ajax et panier
-     * comptes et personnes connectees
-     * bdd
-     */
 
 
     $_SESSION["contact_ok"] = true;
@@ -22,10 +15,6 @@
     if (count($diff) > 0 && count(array_merge($form_content_keys, $diff)) <= count($form_content_keys))
         $_SESSION["contact_ok"] = false;
 
-    var_dump($_POST);
-    echo "<br>";
-    var_dump($diff);
-    echo "<br>";
 
 //    foreach ($_POST as $key => $element) {
 //        if (!in_array($key, $form_content_keys)) {
@@ -92,6 +81,25 @@
         // preparation des scripts SQL
         // envoi vers la bdd
 
+        $texterequete = file_get_contents("sql/BDD inscription client.sql");
+//        $requete = $_SESSION["bdd"]->prepare("insert into clients (nom, prenom, email, genre, metier, date_de_naissance, date_de_contact) values (?, ?, ?, ?, ?, STR_TO_DATE(?, 'YYYY-MM-DD'), NOW())");
+
+        $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $requete = $db->prepare("insert into clients (nom, prenom, email, genre, metier, date_de_naissance, date_de_contact) values (?, ?, ?, ?, ?, STR_TO_DATE(?, 'YYYY-MM-DD'), NOW())");
+        $requete->execute(array(
+            $_SESSION["formulaire_contact"]["nom"],
+            $_SESSION["formulaire_contact"]["prenom"],
+            $_SESSION["formulaire_contact"]["email"],
+            $_SESSION["formulaire_contact"]["genre"],
+            $_SESSION["formulaire_contact"]["fonction"],
+            $_SESSION["formulaire_contact"]["date_de_naissance"],
+        ));
+
+        $requete->closeCursor();
+
+
+
+// code_client 	nom 	prenom 	email 	genre 	metier 	date_de_naissance 	date_de_contact
         $_SESSION["formulaire_contact"] = null;
         header("Location:../contact.php");
     }
@@ -99,7 +107,6 @@
     else {
 
         header("Location:../contact.php");
-        var_dump($_SESSION["formulaire_contact"]);
     }
     // sinon on renvoie l'utilisateur vers le formulaire
 
