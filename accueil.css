@@ -123,10 +123,38 @@ body{
 .cart{
     position: absolute;
     top:13px;
-    right:15%;
+    right:275px;
     transition:500ms;
 
 }
+
+
+
+header .panier a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+
+header .panier a span {
+    display: inline-block;
+    text-align: center;
+    background-color: #c76231;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 13px;
+    right: 14%;
+}
+
+
 
 /*.cart:hover{
     border: 1px solid orange;
