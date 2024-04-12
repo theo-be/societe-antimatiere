@@ -3,6 +3,7 @@
 // Template header, feel free to customize this
 function template_header($title) {
 
+    $num_items_in_cart = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
 
     echo <<<EOT
 
@@ -68,6 +69,7 @@ EOT;
     <div class="panier">
          <a href="monpanier.php">
          <img src="https://purepng.com/public/uploads/large/purepng.com-shopping-cartshoppingcarttrolleycarriagebuggysupermarkets-1421526532356pnf5n.png" alt="Panier" class="cart" width="40" height="40" id="panier">
+         <span>$num_items_in_cart</span>
 		</a>
     </div>
 
