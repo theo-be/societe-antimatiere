@@ -81,14 +81,17 @@ EOT;
 function template_footer() {
     echo <<<EOT
         </main>
-        <footer class="foot">
-            <div class="footcontenu">
-                <p>Copyright Société Antimatiere</p>
-                <p>Contact : 06.55.50.50.55</p>
-                <a href="https://discord.gg/ZFbejANc"><img src="https://i.pinimg.com/736x/b6/fe/4a/b6fe4a830e0263d8344b63e3dbcf3033.jpg" alt="discord" height="50" width="50" href="#" id="contact"></a>
-                <a href="https://github.com/theo-be/societe-antimatiere/tree/main"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu7esomngrloanUN5V-4X2Rk9P4W2EcXLN-hGNWwHsOw&s" alt="Logo du site" width="50" height="50" id="logo"></a>
-            </div>
-        </footer>
+        <div class="container">
+            <div class="boundary"></div>
+            <footer class="foot">
+                <div class="footcontenu">
+                    <p>Copyright Société Antimatiere</p>
+                    <p>Contact : 06.55.50.50.55</p>
+                    <a href="https://discord.gg/ZFbejANc"><img src="https://i.pinimg.com/736x/b6/fe/4a/b6fe4a830e0263d8344b63e3dbcf3033.jpg" alt="discord" height="50" width="50" href="#" id="contact"></a>
+                    <a href="https://github.com/theo-be/societe-antimatiere/tree/main"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu7esomngrloanUN5V-4X2Rk9P4W2EcXLN-hGNWwHsOw&s" alt="Logo du site" width="50" height="50" id="logo"></a>
+                </div>
+            </footer>
+        </div>
 </body>
 
 </html>
