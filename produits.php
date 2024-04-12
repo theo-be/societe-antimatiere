@@ -2,7 +2,7 @@
 
     session_start();
     require_once "php/varSession.inc.php";
-
+    require_once "php/header_footer.php";
 
 
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -38,10 +38,7 @@
 
 ?>
 
-<!doctype html>
-<html>
-<head></head>
-<body>
+<?=template_header("Produits")?>
 
 
 
@@ -50,29 +47,35 @@
 // recuperation de la page actuelle avec la methode GET
 $_SESSION["page"] = $_SERVER["REQUEST_URI"];
 
-
-
 // affichage des produits
 
 foreach ($selection as $value) {
-    $requete = $db->prepare("select * from produit where id_categorie = (select id from categorie where nom=?)");
+    $requete = $db->prepare("SELECT * FROM produit WHERE id_categorie = (SELECT id FROM categorie WHERE nom=?)");
     $requete->execute(array($value));
 
+    echo "<div class='category-container'>";
     echo "<h1>Catégorie $value</h1>";
 
-
     while ($resultat = $requete->fetch()) {
-
-        echo '
-        <div class="boite-produit">
-            <a href="produit.php?id=' . $resultat["id"] . '" class="lien-produit">
-                <div class="image">
-                <img src="img/' . $resultat["photo"] . '" alt="' . $resultat["nom"] . '">
+        echo "
+        <div class='boite-produit'>
+            <a href='produit.php?id={$resultat["id"]}' class='lien-produit'>
+                <div class='image'>
+                    <img src='img/{$resultat["photo"]}' alt='{$resultat["nom"]}'>
                 </div>
-                <div class="nom-produit">' . $resultat["nom"] . '</div>
-                <div class="prixproduit">' . $resultat["prix"] . ' €</div>
+                <div class='nom-produit'>{$resultat["nom"]}</div>
+                <div class='prixproduit'>{$resultat["prix"]} €</div>
             </a>
-        </div>';
+        </div>";
+    }
+
+    echo "</div>";
+
+    $requete->closeCursor();
+}
+
+template_footer();
+
 
 //        echo "<tr>
 //                <td class='photo'>" . $resultat["photo"] . "</td>
@@ -94,13 +97,6 @@ foreach ($selection as $value) {
 //echo "</tr>";
 
 
-    }
-
-
-
-    $requete->closeCursor();
-
-}
 
 
 ?>
@@ -149,7 +145,7 @@ foreach ($selection as $value) {
 <!--</script>-->
 
 
-<button id="Stock">Stock</button>
+<!--<button id="Stock">Stock</button>-->
 
 <script>
     document.getElementById("Stock").addEventListener("click", (e) => {

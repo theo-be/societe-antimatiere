@@ -19,7 +19,7 @@ if ($mdp != $mdp2) {
 // insertion dans la bdd
 
 if (inscription($id, $mdp)) {
-    header("Location:../index.php");
+    header("Location:../produits.php");
 
     $_SESSION["compte"] = true;
     $_SESSION["id"] = $id;
@@ -31,8 +31,6 @@ else {
 }
 
 // si retour faux alors le compte existe deja
-
-
 
 
 ?>

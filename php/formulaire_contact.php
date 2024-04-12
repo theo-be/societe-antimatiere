@@ -1,11 +1,4 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="accueil.css">
-    <meta name="description" content="">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
+
 
 <div class="contact">
     <form method="post" action="php/demandecontact.php">

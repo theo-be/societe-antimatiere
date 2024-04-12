@@ -13,9 +13,10 @@ if ($res = connexion($id, $mdp)) {
     $_SESSION["compte"] = true;
     $_SESSION["id"] = $id;
 
-    header("Location:../index.php");
+    header("Location:../produits.php");
 }
 else {
+
     header("Location:../connexion.php");
 }
 
