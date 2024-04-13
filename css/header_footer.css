@@ -1,0 +1,178 @@
+
+
+
+.bandeauvert{
+    border-bottom: 2px solid #127a20; /* Épaisseur et couleur de la bordure */
+    width: 100%; /* Largeur de la div */
+    /*height: 50px; /* Hauteur de la bordure, ajustez selon vos besoins */
+    margin-top: 65px; /* Marge en bas pour espacement */
+}
+
+.bandeaubleu{
+    border-bottom: 2px solid #2fa6f7; /* Épaisseur et couleur de la bordure */
+    margin-bottom: 65px; /* Marge en bas pour espacement */
+
+}
+
+
+.logotitre{
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    align-items:center;
+    font-size: 13px;
+}
+
+.menu {
+    width: 20%;
+    min-width: 150px;
+    max-width: 300px;
+    color: #ffffff;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    text-anchor: start;
+    border-style: solid;
+    border-width: 1px;
+    /*border-color: #2fa6f7;*/
+    border-collapse: collapse;
+    --color-text-inverted: black;
+    --color-base: #000000;
+    --color-disabled: #2d2421;
+    --color-accent: red;
+    --color-notification: yellow;
+    --color-overlay: rgba(60, 60, 100, 50%);
+}
+
+
+.connexion{
+    border: 1px solid #4980cc;
+    color:#ffffff;
+    background-color: black;
+    text-decoration: none;
+    position: absolute;
+    top:0;
+    right:0;
+    padding: 5px;
+    margin-top: 13px;
+    margin-right:25px;
+    white-space: nowrap;
+    transition: 200ms;
+
+}
+
+.connexion:hover{
+    background-color: #4980cc;
+    color:#000000;
+}
+
+.inscription{
+    border: 1px solid orange;
+    color:#ffffff;
+    background-color: black;
+    text-decoration: none;
+    position: absolute;
+    top:0;
+    right:125px;
+    padding: 5px;
+    margin-top: 13px;
+    margin-right:25px;
+    white-space: nowrap;
+    transition: 200ms;
+}
+
+.inscription:hover{
+    background-color: orange;
+    color:#000000;
+}
+
+
+
+header .panier{
+    position: absolute;
+    top:13px;
+    right:275px;
+    transition:500ms;
+
+}
+
+
+
+header .panier a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+
+header .panier a span {
+    display: inline-block;
+    text-align: center;
+    background-color: #c76231;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    font-weight: bold;
+    position: absolute;
+    right: 14%;
+}
+
+
+.side{
+    border: 1px solid #2fa6f7;
+    background-color: black;
+    text-decoration: none;
+    transition: 200ms;
+    margin: 100px;
+    z-index: 2;
+    height: 52px;
+}
+
+
+.side:hover{
+    background-color: #2fa6f7;
+}
+
+.sideecrit{
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.sideecrit:hover{
+    color: #000000;
+}
+
+
+/*.cart:hover{
+    border: 1px solid orange;
+}*/
+
+.boundary {
+    position: absolute;
+    bottom: 100px; /* Position the boundary 100px above the bottom */
+    width: 100%;
+    height: 2px; /* Set the height of the boundary line */
+    background-color: black; /* Example boundary color */
+}
+
+footer {
+    max-height: 150px;
+    border-top: 2px solid #2fa6f7; /* Thickness and color of the border */
+    position: static; /* Change from absolute to fixed to ensure it stays at the bottom of the viewport */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Align items vertically in the center */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+}

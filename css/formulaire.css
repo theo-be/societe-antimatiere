@@ -1,0 +1,18 @@
+
+
+.submit{
+    border: 1px solid green;
+    background-color: black;
+    color:white;
+    padding:5px;
+    transition:200ms;
+}
+
+.submit:hover{
+    background-color: green;
+    color:black;
+}
+
+.formulaire{
+    background-color: gray;
+}

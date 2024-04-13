@@ -1,40 +1,40 @@
 <?php
 
-    session_start();
-    require_once "php/varSession.inc.php";
-    require_once "php/header_footer.php";
+session_start();
+require_once "php/varSession.inc.php";
+require_once "php/header_footer.php";
 
 
-    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-    $categoriesrequete = $db->query("select nom from categorie");
-    $categories = array();
-    while ($categorie = $categoriesrequete->fetch())
-        $categories[] = $categorie["nom"];
+$categoriesrequete = $db->query("select nom from categorie");
+$categories = array();
+while ($categorie = $categoriesrequete->fetch())
+    $categories[] = $categorie["nom"];
 
-    $categoriesrequete->closeCursor();
+$categoriesrequete->closeCursor();
 
-    $selectionUtilisateur = false;
+$selectionUtilisateur = false;
 
-    // prise en compte des categories demandees
+// prise en compte des categories demandees
 
-    $_SESSION["page"] = $_SERVER["REQUEST_URI"];
+$_SESSION["page"] = $_SERVER["REQUEST_URI"];
 
-    $cat = array();
-    if (isset($_GET["cat"])) {
-        $selectionUtilisateur = true;
+$cat = array();
+if (isset($_GET["cat"])) {
+    $selectionUtilisateur = true;
 
-        $query = explode(',', $_GET["cat"]);
-        foreach ($query as $item) {
-            if (in_array($item, $categories))
-                $cat[] = $item;
-        }
+    $query = explode(',', $_GET["cat"]);
+    foreach ($query as $item) {
+        if (in_array($item, $categories))
+            $cat[] = $item;
     }
+}
 
-    if ($selectionUtilisateur)
-        $selection = array_diff($categories, array_diff($categories, $cat));
-    else
-        $selection = $categories;
+if ($selectionUtilisateur)
+    $selection = array_diff($categories, array_diff($categories, $cat));
+else
+    $selection = $categories;
 
 ?>
 
@@ -59,13 +59,15 @@ foreach ($selection as $value) {
     while ($resultat = $requete->fetch()) {
         echo "
         <div class='boite-produit'>
-            <a href='produit.php?id={$resultat["id"]}' class='lien-produit'>
+                    <a href='produit.php?id={$resultat["id"]}' class='lien-produit'>
                 <div class='image'>
-                    <img src='img/{$resultat["photo"]}' alt='{$resultat["nom"]}'>
+                    <img src='img/{$resultat["photo"]}' alt='{$resultat["photo"]}'>
                 </div>
-                <div class='nom-produit'>{$resultat["nom"]}</div>
-                <div class='prixproduit'>{$resultat["prix"]} €</div>
-            </a>
+                <div class='texte-produit'>
+                        <div class='nom-produit'>{$resultat["nom"]}</div>
+                        <div class='prixproduit'>{$resultat["prix"]} €</div>
+                </div>
+                    </a>
         </div>";
     }
 
@@ -74,7 +76,6 @@ foreach ($selection as $value) {
     $requete->closeCursor();
 }
 
-template_footer();
 
 
 //        echo "<tr>
@@ -147,7 +148,7 @@ template_footer();
 
 <!--<button id="Stock">Stock</button>-->
 
-<script>
+<script type="text/javascript">
     document.getElementById("Stock").addEventListener("click", (e) => {
         var stocks = document.querySelectorAll('.stock');
         stocks.forEach(function(stock) {
@@ -228,5 +229,7 @@ template_footer();
 
 </script>
 
-</body>
-</html>
+<?php
+
+template_footer();
+?>

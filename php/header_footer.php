@@ -1,6 +1,6 @@
 <?php
 
-// Template header, feel free to customize this
+
 function template_header($title) {
 
     $num_items_in_cart = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
@@ -15,9 +15,12 @@ function template_header($title) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>$title</title>
     
-    <link rel="stylesheet" href="accueil.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/panier.css">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/produits.css">
     <meta name="description" content="">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 
 
@@ -25,7 +28,7 @@ function template_header($title) {
 <header role="banner">
     <div class="banner">
     <div class="logotitre">
-        <img src="icon.png" alt="Logo du site" width="100" height="50" id="logo">
+        <img src="../img/icon.png" alt="Logo du site" width="100" height="50" id="logo">
         <h1 id="title">Société Antimatiere</h1>
     </div>
         <!-- Logo du site -->
@@ -38,9 +41,10 @@ function template_header($title) {
         <!-- Menu horizontal -->
         <table class='menu'>
             <tr class="side"><td><a href="produits.php" class="sideecrit">Accueil</a></td></tr>
-            <tr class="side"><td><a href="produits.php?cat=Celestial" class="sideecrit">Célestial</a></td></tr>
-            <tr class="side"><td><a href="produits.php?cat=Glyph" class="sideecrit">Glyph</a></td></tr>
-            <tr class="side"><td><a href="produits.php?cat=Succes" class="sideecrit">Sticker</a></td></tr>
+            <tr class="side"><td><a href="produits.php" class="sideecrit">Catalogue</a></td></tr>
+             <tr class="side"><td><a href="produits.php?cat=Celestial" class="sideecrit">Célestial</a></td></tr>
+            <tr class="side"><td><a href="produits.php?cat=Glyphe" class="sideecrit">Glyphe</a></td></tr>
+            <tr class="side"><td><a href="produits.php?cat=Sticker" class="sideecrit">Sticker</a></td></tr>
             <tr class="side"><td><a href="contact.php" class="sideecrit">Contact</a></td></tr>
 
         </table>
@@ -48,23 +52,22 @@ EOT;
 
     // Vérifie si l'utilisateur est connecté
     if (isset($_SESSION['compte']) && $_SESSION["compte"] === true) {
-    // Si connecté, affiche le nom du compte et le bouton de déconnexion
-    echo "<div>";
-        echo "<a class='inscription'>Bonjour, " . $_SESSION["id"] . "</a>";
+        // Si connecté, affiche le nom du compte et le bouton de déconnexion
+        echo "<div>";
+        echo "<a class='inscription'>" . $_SESSION["id"] . "</a>";
         echo "<a href='deconnexion.php' class='connexion'>Se déconnecter</a>";
-    echo "</div>";
+        echo "</div>";
     } else {
-    // Si non connecté, affiche les boutons d'inscription et de connexion
-    echo "<div>";
-    echo "<a href='inscription.php' class='inscription'>S'inscrire</a>";
-    echo "<a href='connexion.php' class='connexion'>Se connecter</a>";
-    echo "</div>";
+        // Si non connecté, affiche les boutons d'inscription et de connexion
+        echo "<div>";
+        echo "<a href='inscription.php' class='inscription'>S'inscrire</a>";
+        echo "<a href='connexion.php' class='connexion'>Se connecter</a>";
+        echo "</div>";
     }
 
     echo <<<EOT
 
 
-    <div>
       
     <div class="panier">
          <a href="monpanier.php">

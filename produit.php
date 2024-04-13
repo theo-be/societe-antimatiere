@@ -34,11 +34,12 @@ if (!isset($_GET) || !isset($_GET["id"])) {
         ?>
 
         <div class="product content-wrapper">
-            <img src="img/<?= $photo ?>" width="500" height="500" alt="<?= $nom ?>"><div>
+            <img src="img/<?= $photo ?>" width="500" height="500" alt="<?= $nom ?>">
+            <div>
                 <h1 class="nom"><?= $nom ?></h1>
                 <span class="prix">
                 <?= $prix ?>&euro;
-            </span>
+                </span>
                 <form action="php/panier.php" method="post">
                     <input type="number" name="quantite" value="1" min="1" max="<?= $stock ?>" placeholder="Quantity" required>
                     <input type="hidden" name="id" value="<?= $id ?>">
@@ -60,4 +61,3 @@ if (!isset($_GET) || !isset($_GET["id"])) {
 template_footer();
 
 ?>
-

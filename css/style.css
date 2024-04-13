@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    font-family:'Lato',sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    width: 80%;
+    margin-left: 20%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* fait en sorte que la page remplie tout l'ecran, meme si le contenu est vide*/
+    min-height: calc(100vh - 150px - 80px);
+    /*margin: 50px;*/
+    /*padding-bottom: 600px;*/
+    /*padding: 0px 10px;*/
+}
+
+.buyable{
+    display: flex;
+    justify-content: center;
+    border-width: 1px;
+    border-style:solid;
+    padding: 10px;
+    border-color: #b84b5f;
+    color:#ffffff;
+    background-color: #2d2421;
+    transition:200ms;
+}
+
+.buyable:hover{
+    background-color: #b84b5f;
+    color:#000000;
+}
+
+.mainoption{
+    border: 1px solid #127a20;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right:25px;
+    white-space: nowrap;
+    transition: 200ms;
+}
+
+.mainoption:hover{
+    background-color: #5ac467;
+    color:#000000;
+}
+
+
+.menubuyable{
+    display: flex;
+    justify-content: center;
+}
+.menuinverted{
+    color:black;
+}
+
+.container {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
