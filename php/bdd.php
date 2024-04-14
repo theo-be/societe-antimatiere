@@ -1,13 +1,13 @@
 <?php
 
 
-function connexion ($id, $mdp): bool
+function connexion ($pseudo, $mdp): bool
 {
 
     $requetetext = file_get_contents("sql/BDD recuperation mdp");
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $requete = $db->prepare("SELECT mdp FROM compte WHERE pseudo=?");
-    $requete->execute(array($id));
+    $requete->execute(array($pseudo));
 
     if (!($c = $requete->fetch())) {
         return false;
@@ -19,38 +19,31 @@ function connexion ($id, $mdp): bool
     return false;
 }
 
-function inscription ($id, $mdp): bool
+function inscription ($pseudo, $mdp): bool
 {
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+    // verification de l'unicite du compte
+    $verifrequete = $db->prepare("select id from compte where pseudo=?");
+    $verifrequete->execute(array($pseudo));
+    if ($verifrequete->fetch()) {
+        return false;
+    }
+
+    // le compte n'existe pas alors on peut le creer
+
     $requete = $db->prepare("insert into compte (pseudo, mdp) values (?, ?)");
 
     $mdp_crypte = password_hash("$mdp", PASSWORD_DEFAULT);
-    $requete->execute(array($id, $mdp_crypte));
+    $requete->execute(array($pseudo, $mdp_crypte));
 
-//    $c = null;
-//    foreach ($dbc as $compte) {
-//        if ($compte["id"] == $id) {
-//            $c = $compte;
-//            break;
-//        }
-//    }
-//
-//    if ($c != null) {
-//        // le compte existe deja
-//        return false;
-//    }
-
-//    $dbc[] = ["id" => "$id", "mdp" => password_hash("$mdp", PASSWORD_DEFAULT)];
-//
-//    $dbctext = json_encode($dbc, JSON_PRETTY_PRINT);
-//    file_put_contents("dbcompte.json", $dbctext);
-
-
+    $requete->closeCursor();
     return true;
 }
 
 
-function deconnexion () {
+function deconnexion (): void
+{
     if (!isset($_SESSION))
         session_start();
     session_destroy();
