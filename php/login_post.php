@@ -11,12 +11,11 @@ $mdp = $_POST["mdp"];
 if ($res = connexion($id, $mdp)) {
     // charger les infos du compte
     $_SESSION["compte"] = true;
-    $_SESSION["id"] = $id;
+    $_SESSION["id"] = htmlspecialchars( $id);
 
-    header("Location:../produits.php");
+    header("Location:". $_SESSION["page"]);
 }
 else {
-
     header("Location:../connexion.php");
 }
 
