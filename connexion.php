@@ -3,6 +3,10 @@
 session_start();
 require_once "php/varSession.inc.php";
 require_once "php/header_footer.php";
+// verification de l'acces a la page
+if ($_SESSION["compte"]) {
+    header("Location:" . $_SESSION["page"]);
+}
 template_header("Inscription");
 ?>
 
