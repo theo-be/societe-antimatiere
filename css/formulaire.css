@@ -1,4 +1,7 @@
-
+.error-message{
+    color: red;
+    font-size: small;
+}
 
 .submit{
     border: 1px solid green;
@@ -11,8 +14,21 @@
 .submit:hover{
     background-color: green;
     color:black;
+    box-shadow: 0 0 20px 10px darkgreen;
 }
 
 .formulaire{
     background-color: gray;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    padding: 50px 40px;
+    color: white;
+    background: #222121;
+    border-radius: 10px;
+    /*box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);*/
 }
