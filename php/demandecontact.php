@@ -75,12 +75,12 @@
         $requete->closeCursor();
 
         $_SESSION["formulaire_contact"] = null;
-        header("Location:../contact.php");
+        header("Location:contact.php");
     }
 
     else {
 
-        header("Location:../contact.php");
+        header("Location:contact.php");
     }
     // sinon on renvoie l'utilisateur vers le formulaire
 

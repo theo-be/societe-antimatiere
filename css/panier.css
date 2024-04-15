@@ -1,4 +1,3 @@
-
 .valider-commande-btn {
     margin: 5%;
     padding: 12px 20px;
@@ -18,8 +17,8 @@
 
 .panier-box {
     display: block;
-    width: 50%;
-    margin: 0 auto;
+    width: 100%;
+    /*margin: 0 auto;*/
 }
 
 .panier-box table {
@@ -44,4 +43,15 @@
 }
 .panier-box table .img {
     width: 80px;
+}
+
+.panier-box .total {
+    padding: 40px 0;
+}
+.panier-box .total .text {
+    padding-right: 40px;
+    font-size: 18px;
+}
+.panier-box .total .prix {
+    font-size: 18px;
 }

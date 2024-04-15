@@ -16,7 +16,7 @@ if ($res = connexion($id, $mdp)) {
     header("Location:". $_SESSION["page"]);
 }
 else {
-    header("Location:../connexion.php");
+    header("Location:connexion.php");
 }
 
 

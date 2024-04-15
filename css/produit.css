@@ -1,0 +1,67 @@
+main > .product {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+main > .product > div {
+    padding-left: 15px;
+}
+main > .product h1 {
+    font-size: 34px;
+    font-weight: normal;
+    margin: 0;
+    padding: 20px 0 10px 0;
+}
+main > .product .prix {
+    display: block;
+    font-size: 22px;
+}
+
+main > .product form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 40px 0;
+}
+main > .product form input[type="text"] {
+    width: 15px; /* Adjust width based on content */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    font-size: 14px;
+    color: white;
+    background: none;
+    text-align: center;
+}
+
+button{
+    border: 1px solid green;
+    background-color: black;
+    color:white;
+    padding:5px;
+    transition:200ms;
+}
+
+button:hover{
+    background-color: green;
+    color:black;
+}
+
+main > .product form input[type="submit"] {
+    border-color: #b84b5f;
+    background-color: #2d2421;
+    border-width: 1px;
+    border-style:solid;
+    color: #FFFFFF;
+    width: 400px;
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+main > .product form input[type="submit"]:hover {
+    background-color: #b84b5f;
+    color:#000000;
+}

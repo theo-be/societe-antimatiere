@@ -1,7 +1,7 @@
 
 
 <div class="contact">
-    <form method="post" action="php/demandecontact.php">
+    <form method="post" action="demandecontact.php">
         <h2>Demande de contact</h2>
         <!--<label>Date du contact</label><input type="date" name="date_contact" required><br><br>-->
         <label>Nom</label> <input class="formulaire" type="text" placeholder="Entrez Nom" name="nom" required><br><br>

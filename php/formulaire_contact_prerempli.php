@@ -5,7 +5,7 @@ require_once "remplir_formulaire.php";
 ?>
 
 <div class="contact">
-    <form method="post" action="php/demandecontact.php">
+    <form method="post" action="demandecontact.php">
         <h2>Demande de contact</h2>
         <h1>ERREUR informations incorrectes</h1>
         <?php

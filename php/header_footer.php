@@ -15,10 +15,12 @@ function template_header($title) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>$title</title>
     
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/panier.css">
-    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
-    <link rel="stylesheet" type="text/css" href="css/produits.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/panier.css">
+    <link rel="stylesheet" type="text/css" href="../css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/produits.css">
+    <link rel="stylesheet" type="text/css" href="../css/formulaire.css">
+    <link rel="stylesheet" type="text/css" href="../css/produit.css">
     <meta name="description" content="">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
@@ -31,8 +33,6 @@ function template_header($title) {
         <img src="../img/icon.png" alt="Logo du site" width="100" height="50" id="logo">
         <h1 id="title">Société Antimatiere</h1>
     </div>
-        <!-- Logo du site -->
-       <!-- <div class="bandeaubleu"></div> -->
     </div>
 
 
@@ -40,7 +40,7 @@ function template_header($title) {
     <div class="bandeauvert"></div>
         <!-- Menu horizontal -->
         <table class='menu'>
-            <tr class="side"><td><a href="produits.php" class="sideecrit">Accueil</a></td></tr>
+            <tr class="side"><td><a href="accueil.php" class="sideecrit">Accueil</a></td></tr>
             <tr class="side"><td><a href="produits.php" class="sideecrit">Catalogue</a></td></tr>
              <tr class="side"><td><a href="produits.php?cat=Celestial" class="sideecrit">Célestial</a></td></tr>
             <tr class="side"><td><a href="produits.php?cat=Glyphe" class="sideecrit">Glyphe</a></td></tr>

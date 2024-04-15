@@ -48,6 +48,18 @@ INSERT INTO `categorie` (`id`, `nom`) VALUES
 --
 -- Table structure for table `clients`
 --
+/*
+CREATE TABLE `clients` (
+  `code_client` int(11) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `prenom` varchar(30) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `genre` varchar(6) DEFAULT NULL,
+  `metier` varchar(30) DEFAULT NULL,
+  `date_de_naissance` date DEFAULT NULL,
+  `date_de_contact` date DEFAULT CURRENT_TIMESTAMP()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+*/
 
 CREATE TABLE `clients` (
   `code_client` int(11) NOT NULL,
@@ -57,7 +69,8 @@ CREATE TABLE `clients` (
   `genre` varchar(6) DEFAULT NULL,
   `metier` varchar(30) DEFAULT NULL,
   `date_de_naissance` date DEFAULT NULL,
-  `date_de_contact` date DEFAULT current_timestamp()
+  -- cette version marche sur phpmyadmin
+  `date_de_contact` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

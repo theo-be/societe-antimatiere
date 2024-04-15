@@ -95,7 +95,7 @@ require_once "php/varSession.inc.php";
         function scene() {
             if (width >= 100) {
                 clearInterval(identity);
-                window.location.href = "accueil.php";
+                window.location.href = "php/accueil.php";
             } else {
                 width++;
                 element.style.width = width + '%';
