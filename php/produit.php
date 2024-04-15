@@ -15,7 +15,7 @@ if (!isset($_GET) || !isset($_GET["id"])) {
     echo "Aucun produit sélectionné";
 } else {
     $id = $_GET["id"];
-    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     $requete = $db->prepare("select * from produit where id=?");
     $requete->execute(array($id));
@@ -32,7 +32,7 @@ if (!isset($_GET) || !isset($_GET["id"])) {
 
         $requete->closeCursor();
         ?>
-
+        <script src="../js/script.js"></script>
         <div class="product">
             <img src="../img/<?= $photo ?>" width="500" height="500" alt="<?= $nom ?>">
             <div>
@@ -46,11 +46,15 @@ if (!isset($_GET) || !isset($_GET["id"])) {
                     <!-- Boutons +/- -->
                     <div class="quantity-control">
                         <button type="button" class="decrement-btn">-</button>
-                        <input type="text" name="quantite" value="1" class="quantity-field" data-stock="<?= $stock ?>">
+                        <input type="text" name="quantite" value="1" class="quantity-field" data-stock="<?= $stock ?>" readonly>
                         <button type="button" class="increment-btn">+</button>
                     </div>
                     <input type="hidden" name="id" value="<?= $id ?>">
-
+                    <!--Stock -->
+                    <div class="stock">
+                        <input type="hidden" id="stock" value="<?= $stock ?>" readonly>
+                        <button type="button" class="stock-btn" onclick="show_stock()">Voir le stock</button>
+                    </div>
                     <input class="ajouter-panier-btn" type="submit" value="Ajouter au panier">
                 </form>
                 <div class="description">
@@ -58,7 +62,7 @@ if (!isset($_GET) || !isset($_GET["id"])) {
                 </div>
             </div>
         </div>
-        <script src="../js/script.js"></script>
+
 
 
         <?php
