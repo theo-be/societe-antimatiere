@@ -15,7 +15,7 @@ if (!isset($_GET) || !isset($_GET["id"])) {
     echo "Aucun produit sélectionné";
 } else {
     $id = $_GET["id"];
-    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     $requete = $db->prepare("select * from produit where id=?");
     $requete->execute(array($id));
