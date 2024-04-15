@@ -42,7 +42,7 @@
 
 
 
-    if (!preg_match("#^([0-9a-z.]){3,}@([a-z]){2,}.([a-z]){2,4}$#i", $_POST["email"])) {
+    if (!preg_match("#^([0-9a-z.]){3,}@([a-z]){2,}.([a-z]){2,}$#i", $_POST["email"])) {
         // email invalide
         echo "email invalide<br>";
         $_SESSION["contact_ok"] = false;
@@ -75,12 +75,12 @@
         $requete->closeCursor();
 
         $_SESSION["formulaire_contact"] = null;
-        header("Location:contact.php");
+        header("Location:../contact.php");
     }
 
     else {
 
-        header("Location:contact.php");
+        header("Location:../contact.php");
     }
     // sinon on renvoie l'utilisateur vers le formulaire
 
