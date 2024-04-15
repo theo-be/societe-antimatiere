@@ -19,19 +19,22 @@ require_once "php/varSession.inc.php";
 
 <style>
     body{
+        overflow: hidden;
         font-family: 'Inter', sans-serif;
-        background-image: url('dark-bg.png');
-        background-size: cover; /* Optional: Adjust the size of the background */
-        background-position: center; /* Center the background image */
-        margin: 0; /* Optional: Remove default body margin */
+        background-image: url('img/stars-bg.png');
+        background-size: cover;
+        background-position: center;
+        margin: 0;
         padding: 0;
         text-align: center;
         color: white;
     }
 
+
     h1{
         font-family: , Serif, serif;
         font-size: xx-large;
+        margin: 10%;
     }
 
     .index-box{
@@ -74,7 +77,6 @@ require_once "php/varSession.inc.php";
 <div class="index-box">
 <h1>Cliquer pour visiter le site de vente en ligne de la Societé Antimatiere</h1>
 
-<img src="img/1.png" width="200px"%>
 
 <div id="Progress_Status">
     <div id="myprogressBar">1%</div>
