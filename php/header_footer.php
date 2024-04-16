@@ -54,7 +54,7 @@ EOT;
     if (isset($_SESSION['compte']) && $_SESSION["compte"] === true) {
         // Si connecté, affiche le nom du compte et le bouton de déconnexion
         echo "<div>";
-        echo "<a class='inscription'>" . $_SESSION["id"] . "</a>";
+        echo "<a class='inscription' title='" . $_SESSION["id"] . "'>" . $_SESSION["id"] . "</a>";
         echo "<a href='deconnexion.php' class='connexion'>Se déconnecter</a>";
         echo "</div>";
     } else {
