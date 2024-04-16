@@ -47,9 +47,6 @@
 
 
 .connexion{
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     border: 1px solid #4980cc;
     color:#ffffff;
     background-color: black;
@@ -59,7 +56,7 @@
     right:0;
     padding: 5px;
     margin-top: 13px;
-    margin-right:25px;
+    margin-right:15px;
     white-space: nowrap;
     transition: 200ms;
 
@@ -71,6 +68,10 @@
 }
 
 .inscription{
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     border: 1px solid orange;
     color:#ffffff;
     background-color: black;
@@ -81,7 +82,6 @@
     padding: 5px;
     margin-top: 13px;
     margin-right:25px;
-    white-space: nowrap;
     transition: 200ms;
 }
 
