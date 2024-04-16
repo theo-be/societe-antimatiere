@@ -61,7 +61,7 @@
         // preparation des scripts SQL
         // envoi vers la bdd
 
-        $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         $requete = $db->prepare("insert into clients (nom, prenom, email, genre, metier, date_de_naissance) values (?, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'))");
         $requete->execute(array(
             $_SESSION["formulaire_contact"]["nom"],
