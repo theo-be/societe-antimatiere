@@ -28,7 +28,7 @@ template_header("Panier");
             if (count($_SESSION["panier"]) == 0) {
                 echo "<tr><td colspan='7' style='text-align:center'>Votre panier est vide</td></tr>";
             } else {
-                $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
                 foreach ($_SESSION["panier"] as $item) {
                     $requete = $db->prepare("select * from produit where id=?");
                     $requete->execute(array($item["id"]));

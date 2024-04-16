@@ -5,7 +5,7 @@ function connexion ($pseudo, $mdp, $resterconnecte): bool
 {
 
 //    $requetetext = file_get_contents("sql/BDD recuperation mdp");
-    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $requete = $db->prepare("SELECT mdp FROM compte WHERE pseudo=?");
     $requete->execute(array($pseudo));
 
@@ -29,7 +29,7 @@ function connexion_cookie ($pseudo, $mdp): bool
 {
 
 //    $requetetext = file_get_contents("sql/BDD recuperation mdp");
-    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $requete = $db->prepare("SELECT mdp FROM compte WHERE pseudo=?");
     $requete->execute(array($pseudo));
 
@@ -51,7 +51,7 @@ function connexion_cookie ($pseudo, $mdp): bool
 
 function inscription ($pseudo, $mdp, $resterconnecte): bool
 {
-    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     // verification de l'unicite du compte
     $verifrequete = $db->prepare("select id from compte where pseudo=?");

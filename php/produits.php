@@ -5,7 +5,7 @@ require_once "varSession.inc.php";
 require_once "header_footer.php";
 
 
-$db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', 'cytech0001', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 $categoriesrequete = $db->query("select nom from categorie");
 $categories = array();
