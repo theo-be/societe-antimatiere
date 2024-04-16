@@ -47,6 +47,9 @@
 
 
 .connexion{
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border: 1px solid #4980cc;
     color:#ffffff;
     background-color: black;
