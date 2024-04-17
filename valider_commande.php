@@ -66,7 +66,7 @@ $_SESSION["page"] = "/index.php";
     }
 
     .ticket-box.show {
-        top: 500px; /* Position finale */
+        top: 50vh; /* Position finale */
     }
 
     .submit{
