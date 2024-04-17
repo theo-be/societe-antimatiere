@@ -19,11 +19,12 @@ require_once "php/varSession.inc.php";
 
 <style>
     body{
+        overflow: hidden;
         font-family: 'Inter', sans-serif;
-        background-image: url('img/dark-bg.png');
-        background-size: cover; /* Optional: Adjust the size of the background */
-        background-position: center; /* Center the background image */
-        margin: 0; /* Optional: Remove default body margin */
+        background-image: url('img/stars-bg.png');
+        background-size: cover;
+        background-position: center;
+        margin: 0;
         padding: 0;
         text-align: center;
         color: white;
