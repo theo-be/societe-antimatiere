@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-session_destroy();
+require_once "varSession.inc.php";
+require_once "bdd.php";
 
-header("Location:../index.php");
+deconnexion();
+header("Location:../accueil.php");
 ?>
