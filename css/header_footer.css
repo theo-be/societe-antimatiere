@@ -47,6 +47,7 @@
 
 
 .connexion{
+    width: 120px;
     border: 1px solid #4980cc;
     color:#ffffff;
     background-color: black;
@@ -68,7 +69,7 @@
 }
 
 .inscription{
-    max-width: 110px;
+    width: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -78,7 +79,7 @@
     text-decoration: none;
     position: absolute;
     top:0;
-    right:125px;
+    right:130px;
     padding: 5px;
     margin-top: 13px;
     margin-right:25px;
@@ -95,7 +96,7 @@
 header .panier{
     position: absolute;
     top:13px;
-    right:275px;
+    right:300px;
     transition:500ms;
 
 }
