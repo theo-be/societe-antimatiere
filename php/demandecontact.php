@@ -44,13 +44,11 @@
 
     if (!preg_match("#^([0-9a-z.]){3,}@([a-z]){2,}.([a-z]){2,}$#i", $_POST["email"])) {
         // email invalide
-        echo "email invalide<br>";
         $_SESSION["contact_ok"] = false;
         $_SESSION["formulaire_contact"]["email"] = "";
     }
 
     if (!preg_match("#[0-9]{4}(-[0-9]{2}){2}#", $_POST["date_naissance"])) {
-        echo "date de naissance invalide<br>";
         $_SESSION["formulaire_contact"]["date_naissance"] = "";
         $_SESSION["contact_ok"] = false;
     }
