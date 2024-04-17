@@ -15,14 +15,14 @@ function template_header($title) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>$title</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/panier.css">
-    <link rel="stylesheet" type="text/css" href="../css/header_footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/produits.css">
-    <link rel="stylesheet" type="text/css" href="../css/formulaire.css">
-    <link rel="stylesheet" type="text/css" href="../css/produit.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/panier.css">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/produits.css">
+    <link rel="stylesheet" type="text/css" href="css/formulaire.css">
+    <link rel="stylesheet" type="text/css" href="css/produit.css">
     <meta name="description" content="">
-    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 
 
@@ -30,7 +30,7 @@ function template_header($title) {
 <header role="banner">
     <div class="banner">
     <div class="logotitre">
-        <img src="../img/icon.png" alt="Logo du site" width="100" height="50" id="logo">
+        <img src="img/icon.png" alt="Logo du site" width="100" height="50" id="logo">
         <h1 id="title">Société Antimatiere</h1>
     </div>
     </div>
@@ -55,7 +55,7 @@ EOT;
         // Si connecté, affiche le nom du compte et le bouton de déconnexion
         echo "<div>";
         echo "<a class='inscription' title='" . $_SESSION["id"] . "'>" . $_SESSION["id"] . "</a>";
-        echo "<a href='deconnexion.php' class='connexion'>Se déconnecter</a>";
+        echo "<a href='php/deconnexion.php' class='connexion'>Se déconnecter</a>";
         echo "</div>";
     } else {
         // Si non connecté, affiche les boutons d'inscription et de connexion
