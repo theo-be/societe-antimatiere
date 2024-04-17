@@ -46,7 +46,7 @@ require_once "php/varSession.inc.php";
     }
 
     .index-box{
-        top : 500px;
+        top : 50vh;
         margin: 0 auto;
         position: relative;
 
