@@ -13,7 +13,7 @@ require_once "php/varSession.inc.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <title>societe antimatiere</title>
 </head>
 
@@ -24,19 +24,32 @@ require_once "php/varSession.inc.php";
         background-image: url('img/stars-bg.png');
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
         margin: 0;
         padding: 0;
         text-align: center;
         color: white;
     }
 
-    h1{
-        font-family: , Serif, serif;
-        font-size: xx-large;
+
+
+    .logo-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 10%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        font-size: 30px;
     }
 
     .index-box{
-        margin:200px ;
+        top : 500px;
+        margin: 0 auto;
+        position: relative;
+
     }
 
     #Progress_Status {
@@ -49,13 +62,14 @@ require_once "php/varSession.inc.php";
     #myprogressBar {
         width: 1%;
         height: 35px;
-        background-color: #4CAF50;
+        background-color: green;
         text-align: center;
         line-height: 32px;
         color: white;
     }
 
     .submit{
+        margin: 20px;
         font-size: large;
         border: 1px solid green;
         background-color: black;
@@ -65,6 +79,7 @@ require_once "php/varSession.inc.php";
     }
 
     .submit:hover{
+        box-shadow: 0 0 20px 10px darkgreen;
         background-color: green;
         color:black;
     }
@@ -72,17 +87,17 @@ require_once "php/varSession.inc.php";
 </style>
 <body>
 
-<div class="index-box">
-<h1>Cliquer pour visiter le site de vente en ligne de la Societé Antimatiere</h1>
-
-<img src="img/1.png" width="200px">
-
-<div id="Progress_Status">
-    <div id="myprogressBar">1%</div>
+<div class="logo-box">
+    <img src="img/icon.png" alt="Logo du site" width="250" height="125" id="logo">
+    <h1 id="title">Société Antimatiere</h1>
 </div>
 
-<br>
-<button onclick="update()" class="submit">Visiter le site</button>
+<div class="index-box">
+    <div id="Progress_Status">
+        <div id="myprogressBar">1%</div>
+    </div>
+    <br>
+    <button onclick="update()" class="submit">Visiter le site</button>
 </div>
 <script>
 
