@@ -2,6 +2,8 @@
 
 
 
+
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -13,6 +15,7 @@ if (!isset($_SESSION["init"])) {
     $_SESSION["compte"] = false;
     $_SESSION["id"] = null;
     $_SESSION["page"] = $_SERVER["REQUEST_URI"];
+    $_SESSION["errors"] = [];
 
 
     // si l'utilisateur a choisi "rester connecte"
