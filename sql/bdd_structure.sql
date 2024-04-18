@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2024 at 06:41 PM
+-- Generation Time: Apr 18, 2024 at 06:40 PM
 -- Server version: 10.6.16-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.14
 
@@ -63,14 +63,6 @@ CREATE TABLE `clients` (
   `id_compte` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `clients`
---
-
-INSERT INTO `clients` (`code_client`, `nom`, `prenom`, `email`, `genre`, `metier`, `date_de_naissance`, `date_de_contact`, `sujet`, `contenu`, `id_compte`) VALUES
-(1, 'a', 'a', 'abcd@abcd.bde', 'Homme', 'Ens', '1515-12-15', '2024-04-18', '15', '1551', 1),
-(2, 'a', 'a', 'abcd@abcd.bde', 'Femme', 'Eleve', '1515-12-15', '2024-04-18', '48zes', 'vrsmd$', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -85,14 +77,6 @@ CREATE TABLE `commande` (
   `date_commande` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `commande`
---
-
-INSERT INTO `commande` (`id_commande`, `code_client`, `id_produit`, `quantite_commande`, `date_commande`) VALUES
-(1, 1, 1, 1, '2024-04-18'),
-(2, 1, 2, 2, '2024-04-18');
-
 -- --------------------------------------------------------
 
 --
@@ -104,13 +88,6 @@ CREATE TABLE `compte` (
   `pseudo` varchar(30) NOT NULL,
   `mdp` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `compte`
---
-
-INSERT INTO `compte` (`id`, `pseudo`, `mdp`) VALUES
-(1, 'a', '$2y$10$pWVht0aC28C8swuBG/QVsONef8ivJ8T/FPInLPB43pmGTadT0GQ8C');
 
 -- --------------------------------------------------------
 
@@ -200,19 +177,19 @@ ALTER TABLE `produit`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `code_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `code_client` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `commande`
 --
 ALTER TABLE `commande`
-  MODIFY `id_commande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_commande` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `compte`
 --
 ALTER TABLE `compte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
