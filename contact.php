@@ -10,7 +10,12 @@ template_header("Contact");
 
 
 <?php
-if ($_SESSION["contact_ok"] === true) {
+
+if (!$_SESSION["compte"]) {
+    echo "<h1>Vous devez être connecté pour faire une demande de contact.</h1>";
+}
+
+else if ($_SESSION["contact_ok"] === true) {
     require_once "php/formulaire_contact.php";
 } else {
     require_once "php/formulaire_contact_prerempli.php";

@@ -5,11 +5,13 @@ require_once "php/varSession.inc.php";
 require_once "php/header_footer.php";
 template_header("Panier");
 
+$_SESSION["page"] = $_SERVER["REQUEST_URI"];
+
 ?>
 
     <div class="panier-box">
         <h1>Votre panier</h1>
-        <form id="commandeForm" action="valider_commande.php" method="post">
+        <form id="commandeForm" action="php/gestion_commande.php" method="post">
             <table class="panier">
                 <thead>
                 <tr>
@@ -57,7 +59,16 @@ template_header("Panier");
                     <span class="text">Total</span>
                     <span class="prix"><?=$total?>&euro;</span>
                 </div>
+            <?php
+            if ($_SESSION["compte"]):
+            ?>
+
                 <button type="submit" class="valider-commande-btn">Valider la commande</button>
+            <?php else:
+            ?>
+                <a href="connexion.php" class="valider-commande-btn">Veuillez vous connecter pour passer la commende</a>
+            <?php endif; ?>
+
             <?php endif; ?>
         </form>
     </div>
