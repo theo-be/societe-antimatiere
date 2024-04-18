@@ -1,34 +1,210 @@
-.error-message{
+.form form {
+    text-align: left;
+    margin: 0 auto;
+    background: black;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.125rem;
+    box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.125);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.form label {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.form label.label-show-password,
+.form label.label-resterconnecte {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form label.label-show-password span,
+.form label.label-resterconnecte span{
+    margin: 0;
+}
+
+.form label > span {
+    color: white;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: all 0.25s;
+}
+
+.form label > span.required::after {
+    content: "*";
+    color: #dd6666;
+    margin-left: 0.125rem;
+}
+
+.form label input {
+    outline: none;
+}
+
+.form label input::placeholder {
+    color: lightslategrey;
+}
+
+.form label input[type="password"] {
+    -webkit-text-security: disc;
+}
+
+.form label:hover > span {
+    color: green;
+}
+
+
+.form label:hover > input.text {
+    border-color: darkgreen;
+}
+
+
+.form label input.text:focus,
+.form label input.text:active {
+    border-color: lightgreen;
+    box-shadow: 0 2px lightgreen;
+}
+
+
+.form input {
+    border: 2px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.125rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    height: 2.25rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    width: 30rem;
+    transition: all 0.25s;
+}
+
+/* submit */
+.form input[type="submit"] {
+    color: white;
+    margin-top: 0.625rem;
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    text-transform: uppercase;
+    border: 1px solid green;
+    background-color: black;
+    padding: 5px;
+    transition: 200ms;
+}
+
+.form input[type="checkbox"]{
+    cursor: pointer;
+    margin-left: 1rem;
+    accent-color: green;
+    width: 1rem;
+    /*height: 1rem;*/
+}
+
+.form input[type="checkbox"]:active {
+    transition: all 0.125s;
+    box-shadow: 0 0 10px 5px darkgreen;
+}
+
+.form input[type="submit"]:active {
+    outline: 1px dashed green;
+    outline-offset: 2px;
+    background-color: lightgreen;
+    box-shadow: 0 0 20px 10px darkgreen;
+    transition: all 0.125s;
+}
+
+.form input[type="submit"]:focus {
+    outline: 1px dashed lightgreen;
+    outline-offset: 2px;
+}
+
+.form input[type="submit"]:hover,
+.form input[type="submit"]:focus {
+    background-color: green;
+    color: black;
+}
+
+
+.error-message {
     color: red;
     font-size: small;
 }
 
-.submit{
-    border: 1px solid green;
-    background-color: black;
-    color:white;
-    padding:5px;
-    transition:200ms;
+/* demande de contact */
+
+.form label select,
+.form label input[type="radio"] {
+    margin-top: 0.5rem;
 }
 
-.submit:hover{
-    background-color: green;
-    color:black;
-    box-shadow: 0 0 20px 10px darkgreen;
+.form input[type="date"] {
+    color: lightslategrey;
 }
 
-.formulaire{
-    background-color: gray;
+.form label select {
+    height: 2.25rem;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.125rem;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    color: lightslategrey;
+    font-size: 1rem;
+    margin-top: 0.25rem;
 }
 
+.form label select:focus {
+    border-color: lightgreen;
+    box-shadow: 0 2px lightgreen;
+}
 
-.form {
-    display: flex;
-    flex-direction: column;
-    /*align-items: center;*/
-    padding: 50px 40px;
+.form label input[type="radio"] {
+    accent-color: green;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.form label input[type="radio"] + label {
     color: white;
-    background: #222121;
-    border-radius: 10px;
-    /*box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);*/
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+
+.form label > label:hover span {
+    color: lightgreen;
+}
+
+.form label textarea {
+    outline: none;
+    height: 6rem;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.125rem;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    color: black;
+    resize: vertical;
+    margin-top: 0.25rem;
+}
+
+.form label textarea:focus{
+    border-color: lightgreen;
+    box-shadow: 0 2px lightgreen;
+}
+
+
+.radios{
+    display: flex;
+    justify-content: center;
+}
+
+.radios label{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
 }
