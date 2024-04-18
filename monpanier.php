@@ -37,7 +37,7 @@ $_SESSION["page"] = $_SERVER["REQUEST_URI"];
                         $resultat = null;
                         if ($resultat = $requete->fetch()) {
                             echo "<tr>
-                                <td class='photo' colspan='2'><img src='../img/" . $resultat["photo"] . "' alt='" . $resultat["nom"] . "' width='50' height='50'></td>
+                                <td class='photo' colspan='2'><img src='img/" . $resultat["photo"] . "' alt='" . $resultat["nom"] . "' width='50' height='50'></td>
                                 <td class='nom'>" . $resultat["nom"] . "</td>
                                 <td class='reference'>" . $resultat["id"] . "</td>
                                 <td class='description'>" . $resultat["text_description"] . "</td>
