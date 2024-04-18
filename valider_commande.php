@@ -54,6 +54,7 @@ $_SESSION["page"] = "/index.php";
 
     .ticket-box{
         top : 150%; /* Position initiale*/
+        color: black;
         margin: 0 auto;
         position: relative;
         background-image: url("img/receipt.png");
