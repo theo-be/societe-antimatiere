@@ -15,32 +15,26 @@
     if (count($diff) > 0 && count(array_merge($clef_dans_formulaire, $diff)) <= count($clef_dans_formulaire))
         $_SESSION["contact_ok"] = false;
 
-
-    $_SESSION["formulaire_contact"]["erreur"] = $diff;
-
-    // verification de la presence des informations
-
     $_SESSION["formulaire_contact"] = array();
 
-
+    // verification de la presence des informations
 
     // recuperation des informations de contact
     // on appelle array_merge au lieu de faire une affectation ou de faire array_push car si l'utilisateur renvoie un formulaire qui etait incorrect, alors les donnees sont remplacees
 
     $_SESSION["formulaire_contact"] = array_merge($_SESSION["formulaire_contact"], $_POST);
-    $_SESSION["formulaire_contact"]["date_contact"] = date("Y-m-d");
+//    $_SESSION["formulaire_contact"]["date_contact"] = date("Y-m-d");
 
-
-    // on convertit les caractetes speciaux s'il y en a pour eviter des failles de securite
-    foreach ($_SESSION["formulaire_contact"] as $elem) {
-        $elem = htmlspecialchars($elem);
-    }
+    $_SESSION["formulaire_contact"]["erreur"] = $diff;
 
     foreach ($_SESSION["formulaire_contact"]["erreur"] as $key) {
         $_SESSION["formulaire_contact"]["$key"] = "";
     }
 
-
+    // on convertit les caractetes speciaux s'il y en a pour eviter des failles de securite
+    foreach ($clef_dans_formulaire as $key) {
+        $_SESSION["formulaire_contact"][$key] = htmlspecialchars($_SESSION["formulaire_contact"][$key]);
+    }
 
     if (!preg_match("#^([0-9a-z.]){3,}@([a-z]){2,}.([a-z]){2,}$#i", $_POST["email"])) {
         // email invalide
