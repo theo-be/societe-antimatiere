@@ -3,7 +3,6 @@ session_start();
 require_once "php/varSession.inc.php";
 
 
-$_SESSION["panier"] = [];
 $_SESSION["page"] = "/index.php";
 
 
@@ -39,7 +38,6 @@ $_SESSION["page"] = "/index.php";
     .ticket-box h1{
         font-family: , Serif, serif;
         font-size: xx-large;
-        color: black;
     }
 
     .logo-box {
@@ -73,7 +71,7 @@ $_SESSION["page"] = "/index.php";
         font-size: large;
         border: 1px solid green;
         background-color: green;
-        color: black;;
+        color: black;
         padding:10px;
         margin: 50px;
         transition:200ms;
