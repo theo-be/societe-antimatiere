@@ -30,8 +30,10 @@ function template_header($title) {
 <header role="banner">
     <div class="banner">
     <div class="logotitre">
-        <img src="img/icon.png" alt="Logo du site" width="100" height="50" id="logo">
-        <h1 id="title">Société Antimatiere</h1>
+	<a href="accueil.php">
+        <img src="img/icon.png" alt="Logo du site" width="100" height="50" id="logo"> </a>
+	<a href="accueil.php" style="text-decoration: none;color:white;">
+        <h1 id="title">Société Antimatiere</h1> </a>
     </div>
     </div>
 
