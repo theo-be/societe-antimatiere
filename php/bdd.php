@@ -67,6 +67,7 @@ function inscription ($pseudo, $mdp, $resterconnecte): bool
     $mdp_crypte = password_hash("$mdp", PASSWORD_DEFAULT);
     $requete->execute(array($pseudo, $mdp_crypte));
 
+    $verifrequete->closeCursor();
     $requete->closeCursor();
 
     if ($resterconnecte) {
