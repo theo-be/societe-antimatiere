@@ -23,6 +23,7 @@ function template_header($title) {
     <link rel="stylesheet" type="text/css" href="css/produit.css">
     <meta name="description" content="">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/script.js"></script>
 </head>
 
 

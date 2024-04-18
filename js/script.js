@@ -48,3 +48,17 @@ function show_stock() {
         }
     }
 }
+
+function changeImage(element) {
+    var images = element.querySelectorAll('.image');
+    images.forEach(function(img) {
+        img.src = 'img/bin_hover.png';
+    });
+}
+
+function restoreImage(element) {
+    var images = element.querySelectorAll('.image');
+    images.forEach(function(img) {
+        img.src = 'img/bin.png';
+    });
+}

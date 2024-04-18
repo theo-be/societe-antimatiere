@@ -20,7 +20,7 @@ $_SESSION["page"] = $_SERVER["REQUEST_URI"];
                     <td>Reference</td>
                     <td>Description</td>
                     <td>Prix</td>
-                    <td>Quantité</td>
+                    <td colspan="2">Quantité</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,13 +37,15 @@ $_SESSION["page"] = $_SERVER["REQUEST_URI"];
                         $resultat = null;
                         if ($resultat = $requete->fetch()) {
                             echo "<tr>
-                                <td class='photo' colspan='2'><img src='img/" . $resultat["photo"] . "' alt='" . $resultat["nom"] . "' width='50' height='50'></td>
-                                <td class='nom'>" . $resultat["nom"] . "</td>
-                                <td class='reference'>" . $resultat["id"] . "</td>
-                                <td class='description'>" . $resultat["text_description"] . "</td>
-                                <td class='prix'>" . $resultat["prix"] . "</td>
-                                <td class='qt'>" . $item["quantite"] . "</td>
-                            </tr>";
+                                   <td class='photo' colspan='2'><img src='img/" . $resultat["photo"] . "' alt='" . $resultat["nom"] . "' width='50' height='50'></td>
+                                   <td class='nom'>" . $resultat["nom"] . "</td>
+                                    <td class='reference'>" . $resultat["id"] . "</td>
+                                    <td class='description'>" . $resultat["text_description"] . "</td>
+                                    <td class='prix'>" . $resultat["prix"] . "</td>
+                                    <td class='qt'>" . $item["quantite"] . "</td>
+                                    <td><a href='php/supprimer_panier.php?id=" . $resultat['id'] . "' onmouseover='changeImage(this)' onmouseout='restoreImage(this)'><img src='img/bin.png' alt='poubelle' width='30' height='30' class='image'></a></td>
+                                  </tr>";
+
                             //calcul total
                             $total += $resultat["prix"] * $item["quantite"];
                         }
@@ -59,15 +61,15 @@ $_SESSION["page"] = $_SERVER["REQUEST_URI"];
                     <span class="text">Total</span>
                     <span class="prix"><?=$total?>&euro;</span>
                 </div>
-            <?php
-            if ($_SESSION["compte"]):
-            ?>
+                <?php
+                if ($_SESSION["compte"]):
+                    ?>
 
-                <button type="submit" class="valider-commande-btn">Valider la commande</button>
-            <?php else:
-            ?>
-                <a href="connexion.php" class="valider-commande-btn">Veuillez vous connecter pour passer la commende</a>
-            <?php endif; ?>
+                    <button type="submit" class="valider-commande-btn">Valider la commande</button>
+                <?php else:
+                    ?>
+                    <a href="connexion.php" class="valider-commande-btn">Veuillez vous connecter pour passer la commende</a>
+                <?php endif; ?>
 
             <?php endif; ?>
         </form>
@@ -76,3 +78,4 @@ $_SESSION["page"] = $_SERVER["REQUEST_URI"];
 
 
 <?=template_footer()?>
+

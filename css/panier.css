@@ -55,3 +55,6 @@
 .panier-box .total .prix {
     font-size: 18px;
 }
+
+
+.image { filter: invert(100%); }
