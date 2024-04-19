@@ -10,15 +10,9 @@ require_once "php/header_footer.php";
 template_header("Accueil");
 ?>
 
-    <style>
-        .accueil{
-            margin-bottom: 480px;
-        }
-    </style>
-
     <div class="accueil">
         <h1>Bienvenue sur le site de la Société Antimatiere</h1>
-        <p>Ici vous pourrez retrouver vos éléments préférés du jeu : des céléstials, des glyphs et des stickers.</p>
+        <p>Ici vous pourrez retrouver <strong>vos éléments préférés du jeu</strong> : des <a href='produits.php?cat=Celestial'>céléstials</a>, des <a href='produits.php?cat=Glyphe'>glyphs</a> et des <a href='produits.php?cat=Sticker'>stickers</a>.</p>
         <p>Bon shopping !</p>
     </div>
 
