@@ -43,7 +43,7 @@ $_SESSION["page"] = $_SERVER["REQUEST_URI"];
                                     <td class='description'>" . $resultat["text_description"] . "</td>
                                     <td class='prix'>" . $resultat["prix"] . "</td>
                                     <td class='qt'>" . $item["quantite"] . "</td>
-                                    <td><a href='php/supprimer_panier.php?id=" . $resultat['id'] . "' onmouseover='changeImage(this)' onmouseout='restoreImage(this)'><img src='img/bin.png' alt='poubelle' width='30' height='30' class='image'></a></td>
+                                    <td><a href='php/supprimer_panier.php?id=" . $resultat['id'] . "' onmouseover='changeImage(this)' onmouseout='restoreImage(this)'><img src='img/bin.png' title='supprimer du panier' alt='poubelle' width='30' height='30' class='image-bin'></a></td>
                                   </tr>";
 
                             //calcul total
