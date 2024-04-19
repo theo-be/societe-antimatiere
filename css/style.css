@@ -4,6 +4,17 @@
     font-family:'Lato',sans-serif;
 }
 
+
+* {
+    scrollbar-color: #2fa6f7 transparent;
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2fa6f7;
+    border-radius: 6px;
+}
+
 html {
     scroll-behavior: smooth;
 }
