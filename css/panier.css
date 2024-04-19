@@ -1,5 +1,5 @@
 .valider-commande-btn {
-    margin: 5%;
+    margin: 2%;
     padding: 12px 20px;
     border-style:solid;
     border-color: #b84b5f;
@@ -9,7 +9,10 @@
     font-weight: bold;
     cursor: pointer;
     transition:200ms;
+    display: inline-flex;
+
 }
+
 .valider-commande-btn:hover {
     background-color: #b84b5f;
     color:#000000;
@@ -18,7 +21,6 @@
 .panier-box {
     display: block;
     width: 100%;
-    /*margin: 0 auto;*/
 }
 
 .panier-box table {
