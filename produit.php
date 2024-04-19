@@ -32,9 +32,8 @@ if (!isset($_GET) || !isset($_GET["id"])) {
 
         $requete->closeCursor();
         ?>
-        <script src="js/script.js"></script>
         <div class="product">
-            <img src="img/<?= $photo ?>" width="500" height="500" alt="<?= $photo ?>">
+            <img src="img/<?= $photo ?>" width="500" height="500" alt="<?= $photo ?>" id="product-image">
             <div>
                 <h1 class="nom"><?= $nom ?></h1>
                 <span class="prix">

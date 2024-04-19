@@ -34,7 +34,7 @@ main > .product form input[type="text"] {
     text-align: center;
 }
 
-button{
+main > .product button{
     border: 1px solid green;
     font-size: 14px;
     background-color: black;
@@ -44,7 +44,7 @@ button{
     transition:200ms;
 }
 
-button:hover{
+main > .product button:hover{
     background-color: green;
     color:black;
 }
@@ -66,4 +66,13 @@ main > .product form input[type="submit"] {
 main > .product form input[type="submit"]:hover {
     background-color: #b84b5f;
     color:#000000;
+}
+
+main > .product #product-image{
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+main > .product #product-image:hover{
+    transform: scale(1.4);
 }
