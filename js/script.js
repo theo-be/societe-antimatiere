@@ -50,14 +50,14 @@ function show_stock() {
 }
 
 function changeImage(element) {
-    var images = element.querySelectorAll('.image');
+    var images = element.querySelectorAll('.image-bin');
     images.forEach(function(img) {
         img.src = 'img/bin_hover.png';
     });
 }
 
 function restoreImage(element) {
-    var images = element.querySelectorAll('.image');
+    var images = element.querySelectorAll('.image-bin');
     images.forEach(function(img) {
         img.src = 'img/bin.png';
     });
