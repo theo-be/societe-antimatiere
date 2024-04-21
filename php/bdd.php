@@ -6,7 +6,8 @@ function connexion ($pseudo, $mdp, $resterconnecte): bool
 
 //    $requetetext = file_get_contents("sql/BDD recuperation mdp");
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    $requete = $db->prepare("SELECT mdp FROM compte WHERE pseudo=?");
+    $requetetexte = file_get_contents("../sql/mdp_depuis_pseudo.sql");
+    $requete = $db->prepare($requetetexte);
     $requete->execute(array($pseudo));
 
     if (!($c = $requete->fetch())) {
@@ -30,7 +31,8 @@ function connexion_cookie ($pseudo, $mdp): bool
 
 //    $requetetext = file_get_contents("sql/BDD recuperation mdp");
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    $requete = $db->prepare("SELECT mdp FROM compte WHERE pseudo=?");
+    $requetetexte = file_get_contents("../sql/mdp_depuis_pseudo.sql");
+    $requete = $db->prepare($requetetexte);
     $requete->execute(array($pseudo));
 
     if (!($c = $requete->fetch())) {
@@ -54,7 +56,8 @@ function inscription ($pseudo, $mdp, $resterconnecte): bool
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     // verification de l'unicite du compte
-    $verifrequete = $db->prepare("select id from compte where pseudo=?");
+    $verifrequetetexte = file_get_contents("../sql/id_depuis_compte.sql");
+    $verifrequete = $db->prepare($verifrequetetexte);
     $verifrequete->execute(array($pseudo));
     if ($verifrequete->fetch()) {
         return false;
@@ -62,7 +65,8 @@ function inscription ($pseudo, $mdp, $resterconnecte): bool
 
     // le compte n'existe pas alors on peut le creer
 
-    $requete = $db->prepare("insert into compte (pseudo, mdp) values (?, ?)");
+    $requetetexte = file_get_contents("../sql/ajout_compte.sql");
+    $requete = $db->prepare($requetetexte);
 
     $mdp_crypte = password_hash("$mdp", PASSWORD_DEFAULT);
     $requete->execute(array($pseudo, $mdp_crypte));

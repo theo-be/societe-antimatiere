@@ -10,7 +10,8 @@ $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', arra
 
 
 $idcompte = 0;
-$requeteidcompte = $db->prepare("SELECT id FROM compte WHERE pseudo=?");
+$requeteidcomptetexte = file_get_contents("../sql/id_depuis_compte.sql");
+$requeteidcompte = $db->prepare($requeteidcomptetexte);
 $requeteidcompte->execute([$_SESSION["id"]]);
 if ($id = $requeteidcompte->fetch())
     $idcompte = $id["id"];
@@ -20,7 +21,8 @@ $requeteidcompte->closeCursor();
 // insertion des produits
 
 foreach ($_SESSION["panier"] as $produit) {
-    $requete = $db->prepare("INSERT INTO commande (code_client, id_produit, quantite_commande) VALUES (?,?,?);");
+    $requetetexte = file_get_contents("../sql/ajout_commande.sql");
+    $requete = $db->prepare($requetetexte);
     $requete->execute(array($idcompte, $produit["id"], $produit["quantite"]));
     $requete->closeCursor();
 }

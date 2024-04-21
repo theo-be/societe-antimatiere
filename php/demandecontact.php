@@ -56,14 +56,16 @@
         $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         $idcompte = 0;
-        $requeteidcompte = $db->prepare("SELECT id FROM compte WHERE pseudo=?");
+        $requeteidcomptetexte = file_get_contents("../sql/id_depuis_compte.sql");
+        $requeteidcompte = $db->prepare($requeteidcomptetexte);
         $requeteidcompte->execute([$_SESSION["id"]]);
         if ($id = $requeteidcompte->fetch())
             $idcompte = $id["id"];
 
         $requeteidcompte->closeCursor();
 
-        $requete = $db->prepare("insert into clients (nom, prenom, email, genre, metier, date_de_naissance, sujet, contenu, id_compte) values (?, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?, ?, ?)");
+        $requetetexte = file_get_contents("../sql/ajout_client.sql");
+        $requete = $db->prepare($requetetexte);
         $requete->execute(array(
             $_SESSION["formulaire_contact"]["nom"],
             $_SESSION["formulaire_contact"]["prenom"],
