@@ -3,7 +3,8 @@
 
 function connexion ($pseudo, $mdp, $resterconnecte): bool
 {
-
+    $pseudo = htmlspecialchars($pseudo);
+    $mdp = htmlspecialchars($mdp);
 //    $requetetext = file_get_contents("sql/BDD recuperation mdp");
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $requetetexte = file_get_contents("../sql/mdp_depuis_pseudo.sql");
@@ -28,6 +29,8 @@ function connexion ($pseudo, $mdp, $resterconnecte): bool
 
 function connexion_cookie ($pseudo, $mdp): bool
 {
+    $pseudo = htmlspecialchars($pseudo);
+    $mdp = htmlspecialchars($mdp);
 
 //    $requetetext = file_get_contents("sql/BDD recuperation mdp");
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -53,6 +56,8 @@ function connexion_cookie ($pseudo, $mdp): bool
 
 function inscription ($pseudo, $mdp, $resterconnecte): bool
 {
+    $pseudo = htmlspecialchars($pseudo);
+    $mdp = htmlspecialchars($mdp);
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     // verification de l'unicite du compte
