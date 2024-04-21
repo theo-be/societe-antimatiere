@@ -1,0 +1,1 @@
+insert into compte (pseudo, mdp) values (?, ?)

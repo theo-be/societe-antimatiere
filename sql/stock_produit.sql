@@ -1,0 +1,1 @@
+SELECT quantite_en_stock FROM produit WHERE id=?
