@@ -28,7 +28,7 @@ body{
 }
 
 .ticket-box{
-    top : 150%; /* Position initiale*/
+    top : -50vh; /* Position initiale*/
     color: black;
     margin: 0 auto;
     position: relative;
