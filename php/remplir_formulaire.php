@@ -16,3 +16,9 @@ function remplir_formulaire_genre ($genre) {
 function remplir_formulaire_fonction ($fonction) {
     return ($_SESSION["formulaire_contact"]["fonction"] == "$fonction" ? 'selected="selected"' : "");
 }
+
+function remplir_formulaire_contenu () {
+    if ($_SESSION["formulaire_contact"]["contenu"] == "")
+        return "";
+    else return $_SESSION['formulaire_contact']["contenu"];
+}
