@@ -32,9 +32,8 @@ function connexion_cookie ($pseudo, $mdp): bool
     $pseudo = htmlspecialchars($pseudo);
     $mdp = htmlspecialchars($mdp);
 
-//    $requetetext = file_get_contents("sql/BDD recuperation mdp");
     $db = new PDO('mysql:host=localhost;dbname=antimaterDimension', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    $requetetexte = file_get_contents("../sql/mdp_depuis_pseudo.sql");
+    $requetetexte = file_get_contents("sql/mdp_depuis_pseudo.sql");
     $requete = $db->prepare($requetetexte);
     $requete->execute(array($pseudo));
 
