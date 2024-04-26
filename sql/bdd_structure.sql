@@ -128,7 +128,7 @@ INSERT INTO `produit` (`id`, `nom`, `quantite_en_stock`, `id_categorie`, `photo`
 (16, 'Ticket McDo', 225, 3, 'succes_mcdo.png', 'En achetant le sticker, tentez votre chance afin d\'avoir un coupon d\'accès gratuit à Mc Donald\'s.', 17),
 (17, 'Sacrifice', 61, 3, 'succes_sacrifice.png', 'Un sacrifice peut résoudre bien des problèmes.', 17),
 (18, 'Yo dawg', 128, 3, 'succes_yodawg.png', 'Ce n\'est pas parce que les autres vous regardent étrangement que vous êtes le moins intelligent.', 17),
-(19, 'Pelle', 7, 1, 'cel_pelle.png', 'Description pelle', 270200);
+(19, 'Pelle', 7, 1, 'cel_pelle.png', 'La fin est proche...', 270200);
 
 --
 -- Indexes for dumped tables
@@ -205,7 +205,7 @@ ALTER TABLE `clients`
 -- Constraints for table `commande`
 --
 ALTER TABLE `commande`
-  ADD CONSTRAINT `commande_ibfk_1` FOREIGN KEY (`code_client`) REFERENCES `clients` (`code_client`),
+  ADD CONSTRAINT `commande_ibfk_1` FOREIGN KEY (`code_client`) REFERENCES `compte` (`id`),
   ADD CONSTRAINT `commande_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produit` (`id`);
 
 --
