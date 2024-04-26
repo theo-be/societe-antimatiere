@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2024 at 06:40 PM
+-- Generation Time: Apr 26, 2024 at 07:06 PM
 -- Server version: 10.6.16-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.14
 
@@ -102,7 +102,7 @@ CREATE TABLE `produit` (
   `id_categorie` int(11) DEFAULT NULL,
   `photo` varchar(50) DEFAULT NULL,
   `text_description` varchar(200) DEFAULT NULL,
-  `prix` int(11) DEFAULT NULL
+  `prix` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -110,25 +110,25 @@ CREATE TABLE `produit` (
 --
 
 INSERT INTO `produit` (`id`, `nom`, `quantite_en_stock`, `id_categorie`, `photo`, `text_description`, `prix`) VALUES
-(1, 'Teresa', 10, 1, 'cel_teresa.png', 'Teresa, célestial de la realité', 1),
-(2, 'Effarig', 10, 1, 'cel_effarig.png', 'Effarig, célestial des anciennes reliques', 1),
-(3, 'L\'Anonyme', 10, 1, 'cel_anonyme.png', 'L\'anonyme, célestial des prisonniers', 1),
-(4, 'V', 10, 1, 'cel_v.png', 'V, célestial des succès', 1),
-(5, 'Ra', 10, 1, 'cel_ra.png', 'Ra, célestial de l\'oublié', 1),
-(6, 'Lai\'tela', 10, 1, 'cel_laitela.png', 'Lai\'tela, célestial de l\'antimatière', 1),
-(7, 'Glyphe de puissance', 10, 2, 'glyphe_puissance.png', 'Amplifie la puissance des dimensions d\'antimatière', 1),
-(8, 'Glyphe d\'infinité', 10, 2, 'glyphe_infinite.png', 'Amplifie la puissance des dimensions d\'infinité', 1),
-(9, 'Glyphe de temps', 10, 2, 'glyphe_temps.png', 'Amplifie la puissance des dimensions temporelles', 1),
-(10, 'Glyphe de réplication', 10, 2, 'glyphe_replication.png', 'Amplifie l\'efficacité de la reproduction des réplicantis', 1),
-(11, 'Glyphe de dilatation', 10, 2, 'glyphe_dilatation.png', 'Amplifie la puissance des dimensions d\'antimatière lors de la dilatation du temps', 1),
-(12, 'Glyphe d\'Effarig', 10, 2, 'glyphe_effarig.png', 'Amplifie les effets des reliques', 1),
-(13, 'Glyphe de la réalité', 10, 2, 'glyphe_realite.png', 'Amplifie les bonus de la réalité', 1),
-(14, 'Fake News', 10, 3, 'succes_news.png', 'Description', 1),
-(15, 'Eternité', 10, 3, 'succes_eternite.png', 'Description', 1),
-(16, 'Ticket McDo', 10, 3, 'succes_mcdo.png', 'Description', 1),
-(17, 'Sacrifice', 10, 3, 'succes_sacrifice.png', 'Description', 1),
-(18, 'Yo dawg', 10, 3, 'succes_yodawg.png', 'Description', 1),
-(19, 'Pelle', 10, 1, 'cel_pelle.png', 'Description pelle', 1);
+(1, 'Teresa', 64, 1, 'cel_teresa.png', 'Teresa, célestial de la realité', 9325),
+(2, 'Effarig', 27, 1, 'cel_effarig.png', 'Effarig, célestial des anciennes reliques', 12751),
+(3, 'L\'Anonyme', 97, 1, 'cel_anonyme.png', 'L\'anonyme, célestial des prisonniers', 18659),
+(4, 'V', 82, 1, 'cel_v.png', 'V, célestial des succès', 26458),
+(5, 'Ra', 10, 1, 'cel_ra.png', 'Ra, célestial de l\'oublié', 43239),
+(6, 'Lai\'tela', 34, 1, 'cel_laitela.png', 'Lai\'tela, célestial de l\'antimatière', 74165),
+(7, 'Glyphe de puissance', 30, 2, 'glyphe_puissance.png', 'Amplifie la puissance des dimensions d\'antimatière', 99999),
+(8, 'Glyphe d\'infinité', 24, 2, 'glyphe_infinite.png', 'Amplifie la puissance des dimensions d\'infinité', 159630),
+(9, 'Glyphe de temps', 16, 2, 'glyphe_temps.png', 'Amplifie la puissance des dimensions temporelles', 368954),
+(10, 'Glyphe de réplication', 9, 2, 'glyphe_replication.png', 'Amplifie l\'efficacité de la reproduction des réplicantis', 845623),
+(11, 'Glyphe de dilatation', 41, 2, 'glyphe_dilatation.png', 'Amplifie la puissance des dimensions d\'antimatière lors de la dilatation du temps', 70027),
+(12, 'Glyphe d\'Effarig', 2, 2, 'glyphe_effarig.png', 'Amplifie les effets des reliques', 9657330),
+(13, 'Glyphe de la réalité', 4, 2, 'glyphe_realite.png', 'Amplifie les bonus de la réalité', 2328470),
+(14, 'Fake News', 153, 3, 'succes_news.png', 'Il ne faut pas croire tout ce qu\'on vous raconte.', 17),
+(15, 'Eternité', 167, 3, 'succes_eternite.png', 'L\'attente est si longue, mais le temps passe tellement vite.', 17),
+(16, 'Ticket McDo', 225, 3, 'succes_mcdo.png', 'En achetant le sticker, tentez votre chance afin d\'avoir un coupon d\'accès gratuit à Mc Donald\'s.', 17),
+(17, 'Sacrifice', 61, 3, 'succes_sacrifice.png', 'Un sacrifice peut résoudre bien des problèmes.', 17),
+(18, 'Yo dawg', 128, 3, 'succes_yodawg.png', 'Ce n\'est pas parce que les autres vous regardent étrangement que vous êtes le moins intelligent.', 17),
+(19, 'Pelle', 7, 1, 'cel_pelle.png', 'Description pelle', 270200);
 
 --
 -- Indexes for dumped tables
